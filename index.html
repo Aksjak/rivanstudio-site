@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rivan Studio · Video ads starring AI characters</title>
+<meta name="description" content="Rivan Studio in Norway makes short vertical video ads starring its own fictional AI characters. Pilot video NOK 990, three videos NOK 2,490, delivered in 48 hours, clearly labelled as AI-generated.">
+<meta property="og:title" content="Rivan Studio · Video ads starring AI characters">
+<meta property="og:description" content="Short vertical video ads starring our own fictional AI characters. Pilot NOK 990. Delivered in 48 hours. Labelled as AI-generated.">
+<meta property="og:image" content="https://rivanstudio.com/media/share.png">
+<meta property="og:url" content="https://rivanstudio.com/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="canonical" href="https://rivanstudio.com/">
+<style>
+:root{
+  color-scheme:light;
+  --bg:#f3f5f6; --surface:#ffffff; --ink:#14181e; --ink-2:#58626d; --line:#d8dee3;
+  --accent:#0e6a70; --accent-ink:#ffffff; --chip:#e1ecec; --warm:#b8612b;
+  --display:"Bahnschrift","Avenir Next Condensed","Arial Narrow","Roboto Condensed","Segoe UI",system-ui,sans-serif;
+  --body:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme:dark;
+    --bg:#0e1115; --surface:#161b21; --ink:#e8ebef; --ink-2:#a3adb7; --line:#28313b;
+    --accent:#5cc3c8; --accent-ink:#0e1115; --chip:#16373a; --warm:#e79a62;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-text-size-adjust:100%}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance;font-weight:700}
+h1{font-size:clamp(40px,7.2vw,84px);letter-spacing:-.01em;max-width:13ch}
+h2{font-size:clamp(28px,4vw,42px)}
+h3{font-size:24px}
+p{margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+header.site{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{font-family:var(--display);font-weight:700;font-size:20px;color:var(--ink);text-decoration:none;letter-spacing:.02em}
+nav.main{display:flex;gap:18px;flex-wrap:wrap}
+nav.main a{color:var(--ink-2);text-decoration:none;font-size:15px;font-weight:600}
+nav.main a:hover{color:var(--ink)}
+main{display:flex;flex-direction:column;gap:72px;padding-block:44px 80px}
+section{display:flex;flex-direction:column;gap:20px;scroll-margin-top:72px}
+.hero{gap:22px}
+.lead{font-size:clamp(18px,2.2vw,22px);color:var(--ink-2);max-width:54ch}
+.row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.price{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 16px;min-width:170px}
+.price b{font-family:var(--display);font-size:28px;font-variant-numeric:tabular-nums}
+.price span{font-size:14px;color:var(--ink-2)}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:700;padding:13px 20px;border-radius:10px}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.studio{display:grid;grid-template-columns:1fr 1.2fr;gap:28px;align-items:start}
+.cast{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.card{display:flex;flex-direction:column;gap:10px}
+.frame{position:relative;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#0b0d10;max-width:100%}
+.frame video,.frame img{width:100%;height:100%;object-fit:cover;display:block}
+.frame.placeholder{display:flex;align-items:center;justify-content:center;background:var(--surface);border:1px dashed var(--line)}
+.frame.placeholder span{font-weight:700;color:var(--ink-2);font-size:15px}
+.tag{position:absolute;left:10px;top:10px;background:rgba(10,12,15,.66);color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em;padding:4px 8px;border-radius:999px}
+.card .role{font-size:15px;color:var(--ink-2)}
+.card .fit{font-size:14px}
+.links{display:flex;gap:12px;flex-wrap:wrap;font-size:14px;font-weight:600}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:700;font-size:30px;color:var(--accent);line-height:1}
+.packages{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.pkg{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.pkg.main{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.pkg .amount{font-family:var(--display);font-size:48px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+.pkg ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+.note{font-size:14px;color:var(--ink-2)}
+.save{align-self:flex-start;background:var(--chip);color:var(--accent);font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px}
+.terms{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:8px;max-width:70ch}
+.band{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;display:grid;grid-template-columns:1fr 1.3fr;gap:24px;align-items:start}
+.contact{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.contact .addr{font-family:var(--display);font-size:clamp(22px,3.2vw,32px);font-weight:700;word-break:break-all}
+footer.site{border-top:1px solid var(--line);padding-block:26px 40px;font-size:14px;color:var(--ink-2)}
+footer.site .wrap{display:flex;flex-direction:column;gap:8px}
+@media (max-width:960px){.cast{grid-template-columns:repeat(2,minmax(0,1fr))}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.studio,.band{grid-template-columns:1fr}}
+@media (max-width:620px){.packages,.steps{grid-template-columns:1fr}nav.main{gap:12px}nav.main a{font-size:14px}}
+@media (max-width:400px){.cast{gap:12px}.card .fit{font-size:13px}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">Rivan Studio</a>
+    <nav class="main" aria-label="Main">
+      <a href="#cast">Cast</a>
+      <a href="#prices">Prices</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+  <section class="hero" aria-labelledby="hero-h">
+    <span class="eyebrow">Independent creator studio · Norway</span>
+    <h1 id="hero-h">Short video ads starring our own AI characters.</h1>
+    <p class="lead">Pick a character, send us your product photos, and get a vertical video for your social ads within 48 hours. Every video is clearly labelled as AI-generated.</p>
+    <div class="row">
+      <div class="price"><b>NOK 990</b><span>Pilot · 1 video</span></div>
+      <div class="price"><b>NOK 2,490</b><span>3 videos</span></div>
+      <a class="btn" href="mailto:partnerships@rivanstudio.com?subject=Pilot%20video">Order a pilot</a>
+    </div>
+  </section>
+
+  <section class="studio" aria-labelledby="studio-h">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <span class="eyebrow">The studio</span>
+      <h2 id="studio-h">Virtual creators. Human direction.</h2>
+    </div>
+    <p class="lead" style="font-size:18px">Rivan Studio develops and operates virtual creator brands across home, lifestyle and entertainment. Each character has its own identity, world and audience, made with AI-assisted production, structured quality control and human creative direction. Brands can book the cast for short video ads.</p>
+  </section>
+
+  <section id="cast" aria-labelledby="cast-h">
+    <span class="eyebrow">The cast</span>
+    <h2 id="cast-h">Four fictional characters, each with their own world</h2>
+    <div class="cast">
+      <article class="card">
+        <div class="frame"><video controls muted playsinline loop preload="none" poster="media/elise-poster.jpg"><source src="media/elise-reel.mp4" type="video/mp4"></video></div>
+        <h3>Elise</h3>
+        <p class="role">Home editor. Shows why a room works.</p>
+        <p class="fit"><b>Best for:</b> rugs, lighting, textiles, storage, kitchenware.</p>
+        <div class="links"><a href="https://www.instagram.com/elisesayerhome/" rel="noopener">Instagram ↗</a></div>
+      </article>
+      <article class="card">
+        <div class="frame"><video controls muted playsinline loop preload="none" poster="media/orin-poster.jpg"><source src="media/orin-reel.mp4" type="video/mp4"></video></div>
+        <h3>Orin</h3>
+        <p class="role">Silent comedy. Treats everyday things like a championship.</p>
+        <p class="fit"><b>Best for:</b> snacks, drinks, gadgets, apps, anything with a sense of humour.</p>
+        <div class="links"><a href="https://www.tiktok.com/@orinundercontrol" rel="noopener">TikTok ↗</a><a href="https://www.instagram.com/orinundercontrol/" rel="noopener">Instagram ↗</a></div>
+      </article>
+      <article class="card">
+        <div class="frame"><img src="media/ada-still.jpg" alt="Ada, a fictional AI character, in a dawn gym" loading="lazy"><span class="tag">Reel in production</span></div>
+        <h3>Ada</h3>
+        <p class="role">Before the city wakes. Calm dawn routines.</p>
+        <p class="fit"><b>Best for:</b> coffee, activewear, bags, skincare.</p>
+        <div class="links"><a href="https://www.instagram.com/adanorlin/" rel="noopener">Instagram ↗</a></div>
+      </article>
+      <article class="card">
+        <div class="frame placeholder" role="img" aria-label="Vera's images are being made"><span>New images coming</span></div>
+        <h3>Vera</h3>
+        <p class="role">Last Light Swim Club. Golden hour on the terrace.</p>
+        <p class="fit"><b>Best for:</b> swimwear, sunglasses, sun care, linen.</p>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="how-h">
+    <span class="eyebrow">How it works</span>
+    <h2 id="how-h">From product photo to finished ad in two days</h2>
+    <ol class="steps">
+      <li><b>Send the product</b><span>Reply with a product link or photos, and where the ad will run.</span></li>
+      <li><b>Approve the idea</b><span>Same day, you get a one-line concept and a storyboard frame.</span></li>
+      <li><b>Get the video</b><span>Within 48 hours of approval: a 9:16 MP4, 10–20 seconds, ready for Reels, TikTok and Shorts.</span></li>
+      <li><b>One round of changes</b><span>Included in every video.</span></li>
+    </ol>
+  </section>
+
+  <section id="prices" aria-labelledby="price-h">
+    <span class="eyebrow">Prices</span>
+    <h2 id="price-h">Start with one video</h2>
+    <div class="packages">
+      <div class="pkg main">
+        <span class="eyebrow">Pilot</span>
+        <span class="amount">NOK 990</span>
+        <ul><li>1 video, 10–20 seconds, 9:16</li><li>1 character of your choice</li><li>1 round of changes</li><li>3 months of social use</li></ul>
+        <span class="note">Excl. VAT</span>
+      </div>
+      <div class="pkg">
+        <span class="eyebrow">Three videos</span>
+        <span class="amount">NOK 2,490</span>
+        <span class="save">NOK 480 less than three pilots</span>
+        <ul><li>3 videos, one or more characters</li><li>Different hooks, so you can test which ad works</li><li>1 round of changes per video</li><li>3 months of social use</li></ul>
+        <span class="note">Excl. VAT</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="terms-h">
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <span class="eyebrow">Straight terms</span>
+      <h2 id="terms-h">What you get, and what we don't claim</h2>
+    </div>
+    <ul class="terms">
+      <li>Made with AI and labelled "AI-generated" in the video. The characters are fictional.</li>
+      <li>We never say a character has used, tested or recommends your product from experience. The video shows your product; the product claims stay yours.</li>
+      <li>Built from your product photos, so there's nothing to ship.</li>
+      <li>Use it in your organic and paid social for 3 months. Longer use on request.</li>
+      <li>Delivered without music, so you can add a track your ad account is licensed for.</li>
+      <li>You're buying the video, not our follower count. We don't promise reach.</li>
+      <li>Invoice from Rivan Studio after delivery. Prices exclude VAT.</li>
+    </ul>
+  </section>
+
+  <section id="contact" class="contact" aria-label="Contact">
+    <div style="display:flex;flex-direction:column;gap:6px">
+      <span class="eyebrow">Order a pilot or ask a question</span>
+      <a class="addr" href="mailto:partnerships@rivanstudio.com">partnerships@rivanstudio.com</a>
+    </div>
+    <a class="btn ghost" href="mailto:partnerships@rivanstudio.com?subject=Pilot%20video">Write to us</a>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span><b>Rivan Studio</b> · Operated by AKSEL JAKOBSEN RIVAN, trading as Rivan. Norway. <a href="mailto:admin@rivanstudio.com">admin@rivanstudio.com</a> · <a href="mailto:partnerships@rivanstudio.com">partnerships@rivanstudio.com</a></span>
+    <span>Our creators are virtual personalities developed and operated by Rivan Studio. The examples on this page are our own content, not client work.</span>
+    <span>Privacy: this site sets no cookies and uses no analytics or forms. It's hosted on GitHub Pages, which processes technical data such as IP addresses to deliver the page (<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>). If you email us, we use your message and address only to reply.</span>
+  </div>
+</footer>
+</body>
+</html>
