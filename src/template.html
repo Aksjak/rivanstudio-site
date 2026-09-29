@@ -87,15 +87,20 @@ a:hover .arrow{transform:translateX(3px)}
 .cap i{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
 
 /* hero */
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,6vw,96px);align-items:center;padding-block:clamp(40px,7vw,104px) clamp(48px,6vw,88px)}
-.hero .copy{display:flex;flex-direction:column;gap:26px}
+.hero .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;padding-block:clamp(36px,5vw,64px) clamp(32px,4vw,48px)}
+.hero .copy{display:flex;flex-direction:column;align-items:center;gap:22px;max-width:820px}
+.hero .eyebrow{text-align:center}
+.hero .lead{max-width:58ch}
+.hero .row,.hero .meta{justify-content:center}
 .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .pricehint{font-size:14.5px;color:var(--ink-2)}
 .pricehint b{color:var(--ink);font-weight:600}
 .meta{display:flex;flex-wrap:wrap;gap:8px 22px;list-style:none;margin:4px 0 0;padding:20px 0 0;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
 .meta li{display:flex;align-items:center;gap:9px}
 .meta li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
-.reelwrap{justify-self:end;width:min(100%,380px)}
+.stage{background:var(--paper-2);border-top:1px solid var(--line)}
+.stage .wrap{display:flex;flex-direction:column;align-items:center;padding-block:clamp(28px,4vw,56px)}
+.reelwrap{width:min(100%,440px)}
 
 /* sections */
 .block{padding-block:clamp(64px,9vw,120px);border-top:1px solid var(--line)}
@@ -135,7 +140,10 @@ a:hover .arrow{transform:translateX(3px)}
 .links a:not(.btn):hover{color:var(--ink);border-color:var(--accent)}
 .plainmail{font-size:13.5px;color:var(--ink-3);user-select:all}
 
-/* in production */
+/* in production (inside the cast section) */
+.nexthead{display:flex;flex-direction:column;gap:12px;margin:clamp(40px,5vw,64px) 0 22px;max-width:720px}
+.nexthead h3{font-size:clamp(26px,3vw,38px)}
+.nexthead h3 em{font-style:normal;color:var(--accent)}
 .next{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .card{border:1px solid var(--line);border-radius:18px;padding:clamp(22px,3vw,32px);display:flex;flex-direction:column;gap:14px;background:var(--card);scroll-margin-top:80px}
 .card h3{font-size:clamp(36px,4.2vw,52px);line-height:1}
@@ -161,7 +169,10 @@ a:hover .arrow{transform:translateX(3px)}
 .note{font-size:14px;color:var(--ink-3)}
 
 /* terms, faq */
-.terms{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(28px,6vw,96px)}
+.terms{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(28px,6vw,96px);margin-top:clamp(48px,6vw,88px);padding-top:clamp(32px,4vw,48px);border-top:1px solid var(--line)}
+.thead{display:flex;flex-direction:column;gap:12px;max-width:520px}
+.thead h3{font-size:clamp(26px,3vw,38px)}
+.thead h3 em{font-style:normal;color:var(--accent)}
 .terms ul{margin:0;padding:0;list-style:none}
 .terms li{padding-block:14px;border-bottom:1px solid var(--line);color:var(--ink-2)}
 .terms li:first-child{border-top:1px solid var(--line-2)}
@@ -188,8 +199,8 @@ footer.site a::before{content:"";position:absolute;inset:-10px -4px}
 main{display:flex;flex-direction:column}
 section{scroll-margin-top:64px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-@media (max-width:1000px){.hero .wrap{grid-template-columns:1fr}.reelwrap{justify-self:start;width:min(100%,340px)}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.terms{grid-template-columns:1fr}.creator .wrap{grid-template-columns:1fr}.creator .media,.creator.flip .media{order:2}.media{justify-self:start;width:min(100%,380px)}}
-@media (max-width:760px){nav.main{display:none}.packages,.next{grid-template-columns:1fr}.index a{grid-template-columns:36px minmax(0,1fr) auto;gap:14px}.index .thumb{display:none}}
+@media (max-width:1000px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.terms{grid-template-columns:1fr}.creator .wrap{grid-template-columns:1fr}.creator .media,.creator.flip .media{order:2}.media{justify-self:start;width:min(100%,380px)}}
+@media (max-width:760px){nav.main{display:none}.hero .eyebrow::before{display:none}.hero .meta{flex-direction:column;align-items:center;gap:10px}.packages,.next{grid-template-columns:1fr}.index a{grid-template-columns:36px minmax(0,1fr) auto;gap:14px}.index .thumb{display:none}}
 @media (max-width:440px){.steps{grid-template-columns:1fr}.media{width:100%}.brand{font-size:21px;gap:8px}.navr{gap:10px}.lang a{padding:5px 8px;font-size:11px}.btn.sm.hdr-cta{padding:8px 13px;font-size:13px}.index a{grid-template-columns:32px minmax(0,1fr);row-gap:8px}.index .pill{grid-column:2}}
 @media (max-width:370px){header.site .wrap{padding-inline:12px;gap:8px}.brand{font-size:18px}.brand i{display:none}.navr{gap:7px}.lang a{padding:4px 6px;font-size:10.5px}.btn.sm.hdr-cta{padding:7px 10px;font-size:12px}}
 </style>
@@ -233,9 +244,13 @@ section{scroll-margin-top:64px}
           <li data-i18n="meta3">Made in Norway</li>
         </ul>
       </div>
-      <div class="reelwrap">
-        <div class="phone"><div class="screen"><video autoplay muted loop playsinline preload="metadata" poster="/media/showreel-orin-poster.jpg" aria-label="Showreel: Orin, a fictional AI character, shows off some confident footwork in a laundromat."><source src="/media/showreel-orin.mp4" type="video/mp4"></video></div></div>
-        <p class="cap"><i aria-hidden="true"></i><span data-i18n="reel_cap">Showreel · Orin · 6 seconds</span></p>
+    </div>
+    <div class="stage">
+      <div class="wrap">
+        <div class="reelwrap">
+          <div class="phone"><div class="screen"><video autoplay muted loop playsinline preload="metadata" poster="/media/showreel-orin-poster.jpg" aria-label="Showreel: Orin, a fictional AI character, shows off some confident footwork in a laundromat."><source src="/media/showreel-orin.mp4" type="video/mp4"></video></div></div>
+          <p class="cap"><i aria-hidden="true"></i><span data-i18n="reel_cap">Showreel · Orin · 6 seconds</span></p>
+        </div>
       </div>
     </div>
   </section>
@@ -253,6 +268,28 @@ section{scroll-margin-top:64px}
         <li><a href="#ada"><span class="n">03</span><span class="thumb"></span><span class="who"><b>Ada</b><span data-i18n="tag_ada">The city before it wakes</span></span><span class="pill" data-i18n="status_soon">New work in production</span></a></li>
         <li><a href="#vera"><span class="n">04</span><span class="thumb"></span><span class="who"><b>Vera</b><span data-i18n="tag_vera">Last Light Swim Club</span></span><span class="pill" data-i18n="status_soon">New work in production</span></a></li>
       </ol>
+      <div class="nexthead">
+        <span class="eyebrow" data-i18n="next_eyebrow">In production</span>
+        <h3 id="next-h" data-i18n-html="next_h">Ada and Vera join <em>when their new work is out</em>.</h3>
+      </div>
+      <div class="next">
+        <article id="ada" class="card" aria-labelledby="ada-h">
+          <span class="num">03</span>
+          <h3 id="ada-h">Ada</h3>
+          <p class="role" data-i18n="ada_role">Before the city wakes. 05:12, and the city is still yours.</p>
+          <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Best for</span><p class="fit" data-i18n="ada_fit">Coffee, activewear, bags, skincare.</p></div>
+          <p class="vdesc" data-i18n="hold_note">Bookable again once her new work is out.</p>
+          <div class="links"><a href="https://www.instagram.com/adanorlin/" rel="noopener">Instagram ↗</a></div>
+        </article>
+        <article id="vera" class="card" aria-labelledby="vera-h">
+          <span class="num">04</span>
+          <h3 id="vera-h">Vera</h3>
+          <p class="role" data-i18n="vera_role">Last Light Swim Club. Golden hour on the terrace.</p>
+          <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Best for</span><p class="fit" data-i18n="vera_fit">Swimwear, sunglasses, sun care, linen.</p></div>
+          <p class="vdesc" data-i18n="hold_note">Bookable again once her new work is out.</p>
+          <div class="links"><a href="https://www.instagram.com/veralastlight/" rel="noopener">Instagram ↗</a></div>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -294,32 +331,6 @@ section{scroll-margin-top:64px}
     </div>
   </section>
 
-  <section class="block" aria-labelledby="next-h">
-    <div class="wrap">
-      <div class="head">
-        <span class="eyebrow" data-i18n="next_eyebrow">In production</span>
-        <h2 id="next-h" data-i18n-html="next_h">Ada and Vera join <em>when their new work is out</em>.</h2>
-      </div>
-      <div class="next">
-        <article id="ada" class="card" aria-labelledby="ada-h">
-          <span class="num">03</span>
-          <h3 id="ada-h">Ada</h3>
-          <p class="role" data-i18n="ada_role">Before the city wakes. 05:12, and the city is still yours.</p>
-          <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Best for</span><p class="fit" data-i18n="ada_fit">Coffee, activewear, bags, skincare.</p></div>
-          <p class="vdesc" data-i18n="hold_note">Bookable again once her new work is out.</p>
-          <div class="links"><a href="https://www.instagram.com/adanorlin/" rel="noopener">Instagram ↗</a></div>
-        </article>
-        <article id="vera" class="card" aria-labelledby="vera-h">
-          <span class="num">04</span>
-          <h3 id="vera-h">Vera</h3>
-          <p class="role" data-i18n="vera_role">Last Light Swim Club. Golden hour on the terrace.</p>
-          <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Best for</span><p class="fit" data-i18n="vera_fit">Swimwear, sunglasses, sun care, linen.</p></div>
-          <p class="vdesc" data-i18n="hold_note">Bookable again once her new work is out.</p>
-          <div class="links"><a href="https://www.instagram.com/veralastlight/" rel="noopener">Instagram ↗</a></div>
-        </article>
-      </div>
-    </div>
-  </section>
 
   <section id="how" class="block" aria-labelledby="how-h">
     <div class="wrap">
@@ -359,15 +370,11 @@ section{scroll-margin-top:64px}
           <span class="note" data-i18n="vat">Excl. VAT</span>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="block" aria-labelledby="terms-h">
-    <div class="wrap terms">
-      <div class="head" style="margin-bottom:0">
+      <div class="terms">
+        <div class="thead">
         <span class="eyebrow" data-i18n="terms_eyebrow">Straight terms</span>
-        <h2 id="terms-h" data-i18n-html="terms_h">What you get, and <em>what we don't claim</em>.</h2>
-      </div>
+        <h3 id="terms-h" data-i18n-html="terms_h">What you get, and <em>what we don't claim</em>.</h3>
+        </div>
       <ul>
         <li data-i18n="t1">Made with AI and labelled "AI-generated" in the video. The characters are fictional.</li>
         <li data-i18n="t2">We never say a character has used, tested or recommends your product from experience. The product claims stay yours.</li>
@@ -379,8 +386,10 @@ section{scroll-margin-top:64px}
         <li data-i18n="t9">If the first frame doesn't pass your approval, there is nothing to pay.</li>
         <li data-i18n="t8">Your product photos go through third-party AI tools. Unreleased products stay on our own computer and are made with local tools only.</li>
       </ul>
+      </div>
     </div>
   </section>
+
 
   <section id="faq" class="block" aria-labelledby="faq-h">
     <div class="wrap">
