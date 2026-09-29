@@ -42,6 +42,7 @@ def jsonld(lang):
         "email": "partnerships@rivanstudio.com",
         "description": h["description"],
         "address": {"@type": "PostalAddress", "addressCountry": "NO"},
+        "identifier": {"@type": "PropertyValue", "propertyID": "Organisasjonsnummer", "value": "937616716"},
         "sameAs": [
             "https://www.instagram.com/elisesayerhome/",
             "https://www.youtube.com/channel/UCK6yLrLOdGmpm2PHdUyKXiw",
