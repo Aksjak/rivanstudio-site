@@ -116,6 +116,8 @@ a:hover .arrow{transform:translateX(4px)}
 .frame{position:relative;aspect-ratio:9/16;border-radius:24px;overflow:hidden;background:#000;box-shadow:0 50px 100px -45px rgba(0,0,0,.95),0 0 0 1px rgba(243,238,229,.07)}
 .frame video,.frame img{width:100%;height:100%;object-fit:cover;display:block}
 .frame.wide{aspect-ratio:4/5}
+.frame.placeholder{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 30%,#241e17,#14110e)}
+.frame.placeholder span{font-family:var(--serif);font-size:30px;color:var(--ink-2);text-align:center;padding:20px}
 .tag{position:absolute;left:14px;top:14px;background:rgba(11,10,9,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.08em;padding:6px 11px;border-radius:999px;border:1px solid var(--line-2)}
 .body{display:flex;flex-direction:column;gap:22px;max-width:560px}
 .num{font-family:var(--serif);font-size:20px;color:var(--gold);display:flex;align-items:center;gap:14px}
@@ -251,7 +253,7 @@ section{scroll-margin-top:64px}
       <nav class="index reveal" aria-label="The cast">
         <a class="tile" href="#elise"><img src="/media/tile-elise.jpg" alt="" loading="lazy"><span><small>01</small><b>Elise</b></span></a>
         <a class="tile" href="#orin"><img src="/media/tile-orin.jpg" alt="" loading="lazy"><span><small>02</small><b>Orin</b></span></a>
-        <a class="tile" href="#ada"><img src="/media/tile-ada.jpg" alt="" loading="lazy"><span><small>03</small><b>Ada</b></span></a>
+        <a class="tile soon" href="#ada"><span><small>03</small><b>Ada</b></span></a>
         <a class="tile" href="#vera"><img src="/media/tile-vera.jpg" alt="" loading="lazy"><span><small>04</small><b>Vera</b></span></a>
       </nav>
     </div>
@@ -308,14 +310,13 @@ section{scroll-margin-top:64px}
   <section id="ada" class="creator" aria-labelledby="ada-h">
     <div class="wrap">
       <div class="media reveal">
-        <div class="frame wide"><img src="/media/ada-rooftop.jpg" alt="Ada, a fictional AI character, on a city rooftop at dawn with the skyline behind her" loading="lazy"></div>
+        <div class="frame wide placeholder" role="img" aria-label="Ada's new images are being made"><span data-i18n="ada_soon">Nye bilder kommer</span></div>
       </div>
       <div class="body reveal">
         <span class="num">03</span>
         <h2 id="ada-h">Ada</h2>
         <p class="role" data-i18n="ada_role">Før byen våkner. 05:12, og byen er fortsatt din.</p>
         <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Passer for</span><p class="fit" data-i18n="ada_fit">Kaffe, treningsklær, vesker, hudpleie.</p></div>
-        <p class="vdesc" data-i18n="ada_photo">Bilde: Ada på et hustak i byen ved soloppgang.</p>
         <div class="links"><a class="btn sm" href="mailto:partnerships@rivanstudio.com?subject=Pilot%20video%3A%20Ada"><span data-i18n="ada_book">Bestill en video med Ada</span><span class="arrow" aria-hidden="true">→</span></a><a href="https://www.instagram.com/adanorlin/" rel="noopener">Instagram ↗</a></div>
       </div>
     </div>
