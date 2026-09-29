@@ -9,7 +9,7 @@
 <meta property="og:title" content="KI-videoannonser for europeiske merkevarer · Rivan Studio">
 <meta property="og:description" content="Videoannonser med våre egne fiktive KI-karakterer. Pilot 990 kr, levert innen 48 timer, merket som KI-generert.">
 <meta property="og:image" content="https://rivanstudio.com/media/share.png">
-<meta property="og:image:alt" content="Rivan Studio">
+<meta property="og:image:alt" content="Rivan Studio: video ads starring our own AI characters">
 <meta property="og:url" content="https://rivanstudio.com/no/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rivan Studio">
@@ -196,6 +196,11 @@ section{scroll-margin-top:64px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
 .creator .pricehint{margin-top:-6px}
 .plainmail{font-size:13.5px;color:var(--ink-3);user-select:all}
+/* bigger tap areas without changing the look */
+.links a:not(.btn),footer.site a{position:relative}
+.links a:not(.btn)::before,footer.site a::before{content:"";position:absolute;inset:-12px -6px}
+.qa summary{min-height:44px;align-items:center}
+.human{font-size:15px;color:var(--ink-2)}
 @media (max-width:1000px){.hero .wrap{grid-template-columns:1fr}.reelwrap{justify-self:start;width:min(calc(100% - 18px),360px);margin-left:18px}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.terms{grid-template-columns:1fr}.creator .wrap{grid-template-columns:1fr}.creator .media,.creator.flip .media{order:2}.media{justify-self:start;width:min(100%,400px)}}
 @media (max-width:760px){nav.main{display:none}.pilot,.packages{grid-template-columns:1fr}.index{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .brand,.btn{white-space:nowrap}
@@ -309,9 +314,8 @@ section{scroll-margin-top:64px}
         <h2 id="ada-h">Ada</h2>
         <p class="role" data-i18n="ada_role">Før byen våkner. 05:12, og byen er fortsatt din.</p>
         <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Passer for</span><p class="fit" data-i18n="ada_fit">Kaffe, treningsklær, vesker, hudpleie.</p></div>
-        <p class="pricehint" data-i18n-html="creator_price">Pilot <b>990 kr</b> · eks. mva.</p>
-        <div class="links"><a class="btn sm" href="mailto:partnerships@rivanstudio.com?subject=Pilotvideo%3A%20Ada&amp;body=Hei%20Rivan%20Studio%2C%0A%0AProdukt%20%28en%20lenke%2C%20eller%20legg%20ved%202-3%20bilder%29%3A%0AHvor%20annonsen%20skal%20kj%C3%B8res%3A%0AKarakter%3A%20Ada%0AFirmanavn%20og%20land%20for%20fakturaen%3A%0A%0A"><span data-i18n="ada_book">Bestill en video med Ada</span><span class="arrow" aria-hidden="true">→</span></a><a href="https://www.instagram.com/adanorlin/" rel="noopener">Instagram ↗</a></div>
-        <p class="plainmail" data-i18n="or_write">Eller skriv til partnerships@rivanstudio.com</p>
+        <p class="vdesc" data-i18n="hold_note">Kan bestilles igjen når de nye bildene hennes er ute.</p>
+        <div class="links"><a href="https://www.instagram.com/adanorlin/" rel="noopener">Instagram ↗</a></div>
       </div>
     </div>
   </section>
@@ -326,9 +330,8 @@ section{scroll-margin-top:64px}
         <h2 id="vera-h">Vera</h2>
         <p class="role" data-i18n="vera_role">Last Light Swim Club. Gyllen time på terrassen.</p>
         <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Passer for</span><p class="fit" data-i18n="vera_fit">Badetøy, solbriller, solkrem, lin.</p></div>
-        <p class="pricehint" data-i18n-html="creator_price">Pilot <b>990 kr</b> · eks. mva.</p>
-        <div class="links"><a class="btn sm" href="mailto:partnerships@rivanstudio.com?subject=Pilotvideo%3A%20Vera&amp;body=Hei%20Rivan%20Studio%2C%0A%0AProdukt%20%28en%20lenke%2C%20eller%20legg%20ved%202-3%20bilder%29%3A%0AHvor%20annonsen%20skal%20kj%C3%B8res%3A%0AKarakter%3A%20Vera%0AFirmanavn%20og%20land%20for%20fakturaen%3A%0A%0A"><span data-i18n="vera_book">Bestill en video med Vera</span><span class="arrow" aria-hidden="true">→</span></a><a href="https://www.instagram.com/veralastlight/" rel="noopener">Instagram ↗</a></div>
-        <p class="plainmail" data-i18n="or_write">Eller skriv til partnerships@rivanstudio.com</p>
+        <p class="vdesc" data-i18n="hold_note">Kan bestilles igjen når de nye bildene hennes er ute.</p>
+        <div class="links"><a href="https://www.instagram.com/veralastlight/" rel="noopener">Instagram ↗</a></div>
       </div>
     </div>
   </section>
@@ -415,6 +418,7 @@ section{scroll-margin-top:64px}
     <div class="wrap reveal">
       <span class="eyebrow" id="contact-h" data-i18n="contact_eyebrow">Bestill en pilot eller still et spørsmål</span>
       <a class="addr" href="mailto:partnerships@rivanstudio.com">partnerships@rivanstudio.com</a>
+      <p class="human" data-i18n="human">Rivan Studio drives av Aksel Jakobsen Rivan i Norge.</p>
       <a class="btn" href="mailto:partnerships@rivanstudio.com?subject=Pilotvideo&amp;body=Hei%20Rivan%20Studio%2C%0A%0AProdukt%20%28en%20lenke%2C%20eller%20legg%20ved%202-3%20bilder%29%3A%0AHvor%20annonsen%20skal%20kj%C3%B8res%3A%0AKarakter%3A%20Elise%2C%20Orin%2C%20Ada%20eller%20Vera%0AFirmanavn%20og%20land%20for%20fakturaen%3A%0A%0A"><span data-i18n="cta_write">Skriv til oss</span><span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </section>
