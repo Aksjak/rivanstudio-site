@@ -24,7 +24,7 @@
 <link rel="preload" href="/fonts/InstrumentSerif-normal-400.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "@id": "https://rivanstudio.com/#org", "name": "Rivan Studio", "url": "https://rivanstudio.com/", "logo": "https://rivanstudio.com/favicon.png", "email": "partnerships@rivanstudio.com", "description": "Short vertical video ads starring our own fictional AI characters. Pilot video NOK 990, three for NOK 2,490, delivered within 48 hours and labelled as AI-generated.", "address": {"@type": "PostalAddress", "addressCountry": "NO"}, "sameAs": ["https://www.instagram.com/elisesayerhome/", "https://www.youtube.com/channel/UCK6yLrLOdGmpm2PHdUyKXiw", "https://www.tiktok.com/@orinundercontrol", "https://www.instagram.com/orinundercontrol/", "https://www.instagram.com/adanorlin/", "https://www.instagram.com/veralastlight/"]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Service", "name": "AI video ads starring fictional characters", "serviceType": "Short-form video advertising production", "provider": {"@id": "https://rivanstudio.com/#org"}, "areaServed": ["NO", "SE", "DK", "FI"], "url": "https://rivanstudio.com/", "description": "Short vertical video ads starring our own fictional AI characters. Pilot video NOK 990, three for NOK 2,490, delivered within 48 hours and labelled as AI-generated.", "offers": [{"@type": "Offer", "name": "Pilot: one 10–20 second vertical video", "price": "990", "priceCurrency": "NOK", "priceSpecification": {"@type": "PriceSpecification", "price": "990", "priceCurrency": "NOK", "valueAddedTaxIncluded": false}}, {"@type": "Offer", "name": "Three vertical videos", "price": "2490", "priceCurrency": "NOK", "priceSpecification": {"@type": "PriceSpecification", "price": "2490", "priceCurrency": "NOK", "valueAddedTaxIncluded": false}}]}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "Rivan Studio showreel", "description": "Showreel of Rivan Studio's fictional AI characters: Elise tapes out a rug's footprint, and Orin shows off in a laundromat.", "thumbnailUrl": "https://rivanstudio.com/media/showreel-poster.jpg", "contentUrl": "https://rivanstudio.com/media/showreel.mp4", "uploadDate": "2026-09-28", "duration": "PT12S", "publisher": {"@id": "https://rivanstudio.com/#org"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoObject", "name": "Rivan Studio showreel", "description": "Showreel of Rivan Studio's fictional AI character Orin showing off some confident footwork in a laundromat.", "thumbnailUrl": "https://rivanstudio.com/media/showreel-orin-poster.jpg", "contentUrl": "https://rivanstudio.com/media/showreel-orin.mp4", "uploadDate": "2026-09-28", "duration": "PT6S", "publisher": {"@id": "https://rivanstudio.com/#org"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "What does Rivan Studio make?", "acceptedAnswer": {"@type": "Answer", "text": "Short vertical video ads for social media, starring our own fictional AI characters: Elise (home), Orin (comedy), Ada (morning routines) and Vera (summer and swim). You send product photos, and we make the ad."}}, {"@type": "Question", "name": "What does a video cost?", "acceptedAnswer": {"@type": "Answer", "text": "A pilot is NOK 990 for one 10–20 second video. Three videos cost NOK 2,490. Prices exclude VAT, and we invoice after delivery."}}, {"@type": "Question", "name": "How fast do we get it?", "acceptedAnswer": {"@type": "Answer", "text": "You get a one-line idea and the first frame the same day. The finished video arrives within 48 hours of your OK on the idea, with one round of changes included."}}, {"@type": "Question", "name": "Is the video labelled as AI?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every video is labelled \"AI-generated\", and the characters are fictional."}}, {"@type": "Question", "name": "Does the character endorse our product?", "acceptedAnswer": {"@type": "Answer", "text": "No. We never say a character has used, tested or recommends your product from experience. The video shows your product, and the product claims stay yours."}}, {"@type": "Question", "name": "Where and for how long can we use it?", "acceptedAnswer": {"@type": "Answer", "text": "In your organic and paid social media for 3 months, for example Instagram Reels, TikTok and YouTube Shorts. Longer use is available on request."}}]}</script>
 <style>
 @font-face{font-family:"Instrument Serif";src:url("/fonts/InstrumentSerif-normal-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
@@ -106,6 +106,7 @@ a:hover .arrow{transform:translateX(4px)}
 .tile span{position:absolute;z-index:1;left:clamp(12px,1.6vw,20px);right:12px;bottom:clamp(10px,1.4vw,18px);display:flex;flex-direction:column;gap:2px}
 .tile b{font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.8vw,40px);line-height:1}
 .tile small{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.tile .soon-note{font-family:var(--serif);font-style:normal;font-size:clamp(16px,1.6vw,20px);color:var(--ink-3);text-align:center;padding:0 12px;margin-bottom:18%}
 .tile.soon{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 30%,#241e17,#14110e)}
 
 /* creator features */
@@ -205,7 +206,6 @@ section{scroll-margin-top:64px}
     <div class="navr">
       <nav class="main" aria-label="Main">
         <a href="#cast" data-i18n="nav_cast">Cast</a>
-        <a href="#pilot" data-i18n="nav_pilot">Pilot</a>
         <a href="#prices" data-i18n="nav_prices">Prices</a>
         <a href="#contact" data-i18n="nav_contact">Contact</a>
       </nav>
@@ -237,8 +237,8 @@ section{scroll-margin-top:64px}
         </ul>
       </div>
       <div class="reelwrap">
-        <div class="reel"><video autoplay muted loop playsinline preload="metadata" poster="/media/showreel-poster.jpg" aria-label="Showreel: Elise tapes out a rug's footprint, Orin shows off in a laundromat. Fictional AI characters."><source src="/media/showreel.mp4" type="video/mp4"></video></div>
-        <span class="reelcap"><i aria-hidden="true"></i><span data-i18n="reel_cap">Showreel · Elise and Orin</span></span>
+        <div class="reel"><video autoplay muted loop playsinline preload="metadata" poster="/media/showreel-orin-poster.jpg" aria-label="Showreel: Orin, a fictional AI character, shows off some confident footwork in a laundromat."><source src="/media/showreel-orin.mp4" type="video/mp4"></video></div>
+        <span class="reelcap"><i aria-hidden="true"></i><span data-i18n="reel_cap">Showreel · Orin</span></span>
       </div>
     </div>
   </section>
@@ -251,10 +251,10 @@ section{scroll-margin-top:64px}
         <p class="lead" data-i18n="cast_lead">Virtual creators developed and operated by Rivan Studio, each with their own identity, audience and look. Made with AI-assisted production, strict quality checks and human creative direction.</p>
       </div>
       <nav class="index reveal" aria-label="The cast">
-        <a class="tile" href="#elise"><img src="/media/tile-elise.jpg" alt="" loading="lazy"><span><small>01</small><b>Elise</b></span></a>
+        <a class="tile soon" href="#elise"><i class="soon-note" data-i18n="tile_soon">New work coming</i><span><small>01</small><b>Elise</b></span></a>
         <a class="tile" href="#orin"><img src="/media/tile-orin-spin.jpg" alt="" loading="lazy"><span><small>02</small><b>Orin</b></span></a>
-        <a class="tile soon" href="#ada"><span><small>03</small><b>Ada</b></span></a>
-        <a class="tile soon" href="#vera"><span><small>04</small><b>Vera</b></span></a>
+        <a class="tile soon" href="#ada"><i class="soon-note" data-i18n="tile_soon">New work coming</i><span><small>03</small><b>Ada</b></span></a>
+        <a class="tile soon" href="#vera"><i class="soon-note" data-i18n="tile_soon">New work coming</i><span><small>04</small><b>Vera</b></span></a>
       </nav>
     </div>
   </section>
@@ -262,14 +262,13 @@ section{scroll-margin-top:64px}
   <section id="elise" class="creator" aria-labelledby="elise-h">
     <div class="wrap">
       <div class="media reveal">
-        <div class="frame"><video controls muted playsinline loop preload="none" poster="/media/elise-poster.jpg"><source src="/media/elise-reel.mp4" type="video/mp4"></video></div>
+        <div class="frame wide placeholder" role="img" aria-label="Elise's new videos are being made"><span data-i18n="elise_soon">New videos coming</span></div>
       </div>
       <div class="body reveal">
         <span class="num">01</span>
         <h2 id="elise-h">Elise</h2>
         <p class="role" data-i18n="elise_role">Before you buy: the home editor who shows what to check first.</p>
         <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Best for</span><p class="fit" data-i18n="elise_fit">Rugs, lighting, textiles, storage, kitchenware.</p></div>
-        <p class="vdesc" data-i18n="elise_vid">Video: Elise tapes out a rug's footprint before ordering, then checks thickness and door clearance.</p>
         <div class="links"><a class="btn sm" href="mailto:partnerships@rivanstudio.com?subject=Pilot%20video%3A%20Elise"><span data-i18n="elise_book">Order a video with Elise</span><span class="arrow" aria-hidden="true">→</span></a><a href="https://www.instagram.com/elisesayerhome/" rel="noopener">Instagram ↗</a><a href="https://www.youtube.com/channel/UCK6yLrLOdGmpm2PHdUyKXiw" rel="noopener">YouTube ↗</a></div>
       </div>
     </div>
@@ -317,33 +316,6 @@ section{scroll-margin-top:64px}
         <p class="role" data-i18n="vera_role">Last Light Swim Club. Golden hour on the terrace.</p>
         <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Best for</span><p class="fit" data-i18n="vera_fit">Swimwear, sunglasses, sun care, linen.</p></div>
         <div class="links"><a class="btn sm" href="mailto:partnerships@rivanstudio.com?subject=Pilot%20video%3A%20Vera"><span data-i18n="vera_book">Order a video with Vera</span><span class="arrow" aria-hidden="true">→</span></a><a href="https://www.instagram.com/veralastlight/" rel="noopener">Instagram ↗</a></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="pilot" class="block" aria-labelledby="pilot-h">
-    <div class="wrap">
-      <div class="head reveal">
-        <span class="eyebrow" data-i18n="pilot_eyebrow">What a pilot looks like</span>
-        <h2 id="pilot-h" data-i18n-html="pilot_h">From brief to <em>finished ad</em>.</h2>
-        <p class="note" data-i18n="pilot_note">Example made with our own content, not a client job.</p>
-      </div>
-      <div class="pilot">
-        <div class="stage reveal">
-          <span class="n">01</span>
-          <span class="eyebrow" data-i18n="st1_label">The brief</span>
-          <p class="brief" data-i18n="st1_text">"Help shoppers pick the right rug size before they order."</p>
-        </div>
-        <div class="stage reveal">
-          <span class="n">02</span>
-          <span class="eyebrow" data-i18n="st2_label">First frame for your OK</span>
-          <div class="mini"><img src="/media/pilot-storyboard.jpg" alt="Opening frame: Elise introduces the rug tip" loading="lazy"></div>
-        </div>
-        <div class="stage reveal">
-          <span class="n">03</span>
-          <span class="eyebrow" data-i18n="st3_label">The finished video</span>
-          <div class="mini"><video controls muted playsinline loop preload="none" poster="/media/elise-poster.jpg"><source src="/media/elise-reel.mp4" type="video/mp4"></video></div>
-        </div>
       </div>
     </div>
   </section>
