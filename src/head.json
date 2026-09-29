@@ -1,0 +1,32 @@
+{
+ "en": {
+  "title": "AI video ads for European brands · Rivan Studio",
+  "description": "Short vertical video ads starring our own fictional AI characters. Pilot video EUR 89 (NOK 990 in Norway), three for EUR 229, delivered within 48 hours and labelled as AI-generated.",
+  "og_title": "AI video ads for European brands · Rivan Studio",
+  "og_desc": "Video ads starring our own fictional AI characters. Pilot EUR 89 (NOK 990 in Norway), delivered in 48 hours, labelled as AI-generated.",
+  "service_name": "AI video ads starring fictional characters",
+  "service_type": "Short-form video advertising production",
+  "offer1": "Pilot: one 10–20 second vertical video",
+  "offer2": "Three vertical videos",
+  "video_name": "Rivan Studio showreel",
+  "video_desc": "Showreel of Rivan Studio's fictional AI character Orin showing off some confident footwork in a laundromat.",
+  "mail_subject": "Pilot video",
+  "mail_any": "Elise, Orin, Ada or Vera",
+  "mail_body": "Hi Rivan Studio,\n\nProduct (a link, or attach 2-3 photos):\nWhere the ad will run:\nCharacter: {ch}\nCompany name and country for the invoice:\n\n"
+ },
+ "no": {
+  "title": "KI-videoannonser for europeiske merkevarer · Rivan Studio",
+  "description": "Korte, vertikale videoannonser med våre egne fiktive KI-karakterer. Pilot 990 kr, tre videoer 2 490 kr, levert innen 48 timer og merket som KI-generert.",
+  "og_title": "KI-videoannonser for europeiske merkevarer · Rivan Studio",
+  "og_desc": "Videoannonser med våre egne fiktive KI-karakterer. Pilot 990 kr, levert innen 48 timer, merket som KI-generert.",
+  "service_name": "KI-videoannonser med fiktive karakterer",
+  "service_type": "Produksjon av korte videoannonser",
+  "offer1": "Pilot: én vertikal video på 10–20 sekunder",
+  "offer2": "Tre vertikale videoer",
+  "video_name": "Rivan Studio showreel",
+  "video_desc": "Showreel med Rivan Studios fiktive KI-karakter Orin, som viser frem selvsikkert fotarbeid på et vaskeri.",
+  "mail_subject": "Pilotvideo",
+  "mail_any": "Elise, Orin, Ada eller Vera",
+  "mail_body": "Hei Rivan Studio,\n\nProdukt (en lenke, eller legg ved 2-3 bilder):\nHvor annonsen skal kjøres:\nKarakter: {ch}\nFirmanavn og land for fakturaen:\n\n"
+ }
+}

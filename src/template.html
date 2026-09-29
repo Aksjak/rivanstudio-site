@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:title" content="{{og_title}}">
+<meta property="og:description" content="{{og_desc}}">
+<meta property="og:image" content="https://rivanstudio.com/media/share.png">
+<meta property="og:image:alt" content="Rivan Studio: video ads starring our own AI characters">
+<meta property="og:url" content="{{url}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rivan Studio">
+<meta property="og:locale" content="{{og_locale}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0a09">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="canonical" href="{{url}}">
+<link rel="alternate" hreflang="en" href="https://rivanstudio.com/">
+<link rel="alternate" hreflang="nb" href="https://rivanstudio.com/no/">
+<link rel="alternate" hreflang="x-default" href="https://rivanstudio.com/">
+<link rel="preload" href="/fonts/InstrumentSerif-normal-400.woff2" as="font" type="font/woff2" crossorigin>
+{{jsonld}}
+<style>
+@font-face{font-family:"Instrument Serif";src:url("/fonts/InstrumentSerif-normal-400.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Manrope";src:url("/fonts/Manrope-variable.woff2") format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
+:root{
+  color-scheme:dark;
+  --bg:#0b0a09; --bg-2:#110f0d; --surface:#16130f; --surface-2:#1c1813;
+  --ink:#f3eee5; --ink-2:#b8afa2; --ink-3:#80776b;
+  --line:rgba(243,238,229,.09); --line-2:rgba(243,238,229,.16);
+  --gold:#d6b284; --gold-2:#ecd6b3; --gold-line:rgba(214,178,132,.38);
+  --serif:"Instrument Serif","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:var(--gold);text-underline-offset:4px;text-decoration-thickness:1px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:.98;margin:0;text-wrap:balance;letter-spacing:-.012em}
+h1{font-size:clamp(54px,8.6vw,132px)}
+h1 em,h2 em{font-style:normal;color:var(--gold)}
+h2{font-size:clamp(40px,5.6vw,80px)}
+h3{font-size:30px}
+p{margin:0}
+img,video{max-width:100%}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:clamp(18px,4vw,40px)}
+.eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);display:inline-flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--gold-line)}
+.lead{font-size:clamp(18px,1.9vw,21px);color:var(--ink-2);max-width:48ch;line-height:1.6}
+
+/* header */
+header.site{position:sticky;top:0;z-index:40;background:linear-gradient(to bottom,rgba(11,10,9,.9),rgba(11,10,9,.72));backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{font-family:var(--serif);font-size:26px;color:var(--ink);text-decoration:none;letter-spacing:.01em;display:flex;align-items:center;gap:10px}
+.brand i{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 18px var(--gold)}
+.navr{display:flex;align-items:center;gap:22px}
+nav.main{display:flex;gap:24px}
+nav.main a{color:var(--ink-2);text-decoration:none;font-size:14px;font-weight:600;transition:color .2s}
+nav.main a:hover{color:var(--ink)}
+.lang{display:flex;border:1px solid var(--line-2);border-radius:999px;overflow:hidden}
+.lang a{font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--ink-3);text-decoration:none;padding:6px 11px}
+.lang a[aria-current="true"]{background:var(--ink);color:var(--bg)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:700;font-size:15px;padding:15px 24px;border-radius:999px;transition:transform .3s var(--ease),background .3s,box-shadow .3s;box-shadow:0 10px 30px -12px rgba(214,178,132,.45)}
+.btn:hover{background:var(--gold-2);transform:translateY(-2px)}
+.btn.line{background:transparent;color:var(--ink);border:1px solid var(--line-2);box-shadow:none}
+.btn.line:hover{border-color:var(--gold-line);background:rgba(214,178,132,.06)}
+.btn.sm{padding:9px 16px;font-size:13.5px;box-shadow:none}
+.arrow{transition:transform .3s var(--ease)}
+a:hover .arrow{transform:translateX(4px)}
+
+/* hero */
+.hero{position:relative;isolation:isolate;overflow:hidden}
+.hero::before{content:"";position:absolute;z-index:-1;inset:-30% -12% auto auto;width:70vw;height:70vw;max-width:980px;max-height:980px;background:radial-gradient(closest-side,rgba(214,178,132,.16),rgba(214,178,132,0));pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(32px,6vw,96px);align-items:center;padding-block:clamp(48px,8vw,120px) clamp(56px,7vw,100px)}
+.hero .copy{display:flex;flex-direction:column;gap:28px}
+.row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.pricehint{font-size:14px;color:var(--ink-2)}
+.pricehint b{color:var(--ink);font-weight:700}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;list-style:none;margin:6px 0 0;padding:22px 0 0;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink-2)}
+.meta li{display:flex;align-items:center;gap:9px}
+.meta li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.reelwrap{position:relative;justify-self:end;width:min(100%,400px)}
+.reel{position:relative;aspect-ratio:9/16;border-radius:28px;overflow:hidden;background:#000;box-shadow:0 60px 120px -40px rgba(0,0,0,.9),0 0 0 1px rgba(243,238,229,.08),0 0 80px -20px rgba(214,178,132,.25)}
+.reel video{width:100%;height:100%;object-fit:cover;display:block}
+.reelcap{position:absolute;left:-22px;bottom:34px;background:rgba(22,19,15,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line-2);border-radius:14px;padding:10px 14px;font-size:12.5px;color:var(--ink-2);display:flex;align-items:center;gap:10px}
+.reelcap i{width:7px;height:7px;border-radius:50%;background:#e25c4a;box-shadow:0 0 10px #e25c4a}
+
+/* cast index */
+.block{padding-block:clamp(72px,10vw,140px);border-top:1px solid var(--line)}
+.head{display:flex;flex-direction:column;gap:18px;margin-bottom:clamp(36px,5vw,64px);max-width:820px}
+.index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(10px,1.6vw,20px)}
+.tile{position:relative;display:block;aspect-ratio:3/4;border-radius:18px;overflow:hidden;background:var(--surface);text-decoration:none;color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+.tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s var(--ease),filter .6s;filter:saturate(.92)}
+.tile:hover img{transform:scale(1.045);filter:saturate(1.05)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(11,10,9,.88),rgba(11,10,9,0) 55%)}
+.tile span{position:absolute;z-index:1;left:clamp(12px,1.6vw,20px);right:12px;bottom:clamp(10px,1.4vw,18px);display:flex;flex-direction:column;gap:2px}
+.tile b{font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.8vw,40px);line-height:1}
+.tile small{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.tile .soon-note{font-family:var(--serif);font-style:normal;font-size:clamp(16px,1.6vw,20px);color:var(--ink-3);text-align:center;padding:0 12px;margin-bottom:18%}
+.tile.soon{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 30%,#241e17,#14110e)}
+
+/* creator features */
+.creator{padding-block:clamp(64px,8vw,120px);border-top:1px solid var(--line);scroll-margin-top:64px}
+.creator .wrap{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1fr);gap:clamp(32px,7vw,110px);align-items:center}
+.creator.flip .media{order:2}
+.media{position:relative;justify-self:center;width:min(100%,430px)}
+.frame{position:relative;aspect-ratio:9/16;border-radius:24px;overflow:hidden;background:#000;box-shadow:0 50px 100px -45px rgba(0,0,0,.95),0 0 0 1px rgba(243,238,229,.07)}
+.frame video,.frame img{width:100%;height:100%;object-fit:cover;display:block}
+.frame.wide{aspect-ratio:4/5}
+.frame.placeholder{display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 30%,#241e17,#14110e)}
+.frame.placeholder span{font-family:var(--serif);font-size:30px;color:var(--ink-2);text-align:center;padding:20px}
+.tag{position:absolute;left:14px;top:14px;background:rgba(11,10,9,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:var(--ink);font-size:11px;font-weight:700;letter-spacing:.08em;padding:6px 11px;border-radius:999px;border:1px solid var(--line-2)}
+.body{display:flex;flex-direction:column;gap:22px;max-width:560px}
+.num{font-family:var(--serif);font-size:20px;color:var(--gold);display:flex;align-items:center;gap:14px}
+.num::after{content:"";flex:0 0 60px;height:1px;background:var(--gold-line)}
+.body h2{font-size:clamp(64px,9vw,128px)}
+.role{font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);line-height:1.2;color:var(--ink)}
+.fitrow{display:flex;flex-direction:column;gap:6px;padding:18px 0;border-block:1px solid var(--line)}
+.fitrow .eyebrow::before{display:none}
+.fit{color:var(--ink-2);font-size:16px}
+.vdesc{font-size:14px;color:var(--ink-3)}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.strip a{display:block;aspect-ratio:9/16;border-radius:12px;overflow:hidden;background:#000;box-shadow:0 0 0 1px var(--line)}
+.strip img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s var(--ease)}
+.strip a:hover img{transform:scale(1.05)}
+.gal{display:flex;flex-direction:column;gap:10px}
+.links{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;font-size:14px;font-weight:600}
+.links a:not(.btn){color:var(--ink-2);text-decoration:none;border-bottom:1px solid var(--line-2);padding-bottom:2px}
+.links a:not(.btn):hover{color:var(--ink);border-color:var(--gold)}
+
+/* pilot */
+.pilot{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:stretch}
+.stage{background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:22px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.stage .n{font-family:var(--serif);font-size:48px;line-height:1;color:var(--gold)}
+.brief{font-family:var(--serif);font-size:clamp(26px,2.4vw,32px);line-height:1.2;color:var(--ink);margin-top:auto;margin-bottom:auto}
+.mini{aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:#000;align-self:center;width:min(100%,220px);box-shadow:0 0 0 1px var(--line)}
+.mini img,.mini video{width:100%;height:100%;object-fit:cover;display:block}
+.note{font-size:14px;color:var(--ink-3)}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;counter-reset:s}
+.steps li{counter-increment:s;border-top:1px solid var(--line-2);padding-top:22px;display:flex;flex-direction:column;gap:10px}
+.steps li::before{content:"0" counter(s);font-family:var(--serif);font-size:44px;color:var(--gold);line-height:1}
+.steps li b{font-size:17px}
+.steps li span{color:var(--ink-2);font-size:15px}
+
+/* prices */
+.packages{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.pkg{position:relative;background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:26px;padding:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:14px;overflow:hidden}
+.pkg.main{border-color:var(--gold-line);background:radial-gradient(120% 90% at 0% 0%,rgba(214,178,132,.13),rgba(214,178,132,0) 60%),linear-gradient(180deg,var(--surface-2),var(--surface))}
+.pkg .amount{font-family:var(--serif);font-size:clamp(60px,7vw,92px);line-height:1;font-variant-numeric:tabular-nums}
+.pkg ul{margin:6px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;color:var(--ink-2)}
+.pkg li{display:flex;gap:12px}
+.pkg li::before{content:"";flex:0 0 14px;height:1px;background:var(--gold);margin-top:.8em}
+.save{align-self:flex-start;border:1px solid var(--gold-line);color:var(--gold-2);font-size:12.5px;font-weight:700;padding:5px 12px;border-radius:999px}
+
+/* terms, faq */
+.terms{display:grid;grid-template-columns:1fr 1.25fr;gap:clamp(28px,6vw,96px)}
+.terms ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column}
+.terms li{padding-block:16px;border-bottom:1px solid var(--line);color:var(--ink-2)}
+.terms li:first-child{border-top:1px solid var(--line)}
+.faq{display:flex;flex-direction:column;max-width:900px}
+.qa{border-bottom:1px solid var(--line);padding-block:20px}
+.qa:first-child{border-top:1px solid var(--line)}
+.qa summary{cursor:pointer;font-family:var(--serif);font-size:clamp(23px,2.6vw,30px);line-height:1.2;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";color:var(--gold);font-family:var(--sans);font-weight:300;font-size:26px;line-height:1;transition:transform .3s var(--ease)}
+.qa[open] summary::after{transform:rotate(45deg)}
+.qa p{color:var(--ink-2);margin-top:12px;max-width:68ch}
+
+/* contact */
+.contact{position:relative;isolation:isolate;overflow:hidden}
+.contact::before{content:"";position:absolute;z-index:-1;left:50%;top:50%;width:900px;height:900px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(214,178,132,.12),rgba(214,178,132,0))}
+.contact .wrap{display:flex;flex-direction:column;gap:26px;align-items:flex-start}
+.contact .addr{font-family:var(--serif);font-size:clamp(27px,7.2vw,96px);line-height:1;color:var(--ink);text-decoration:none;overflow-wrap:anywhere}
+.contact .addr:hover{color:var(--gold-2)}
+
+footer.site{border-top:1px solid var(--line);padding-block:34px 48px;font-size:13px;color:var(--ink-3)}
+footer.site .wrap{display:flex;flex-direction:column;gap:8px}
+footer.site a{color:var(--ink-2)}
+
+main{display:flex;flex-direction:column}
+section{scroll-margin-top:64px}
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
+.creator .pricehint{margin-top:-6px}
+.plainmail{font-size:13.5px;color:var(--ink-3);user-select:all}
+/* bigger tap areas without changing the look */
+.links a:not(.btn),footer.site a{position:relative}
+.links a:not(.btn)::before,footer.site a::before{content:"";position:absolute;inset:-12px -6px}
+.qa summary{min-height:44px;align-items:center}
+.human{font-size:15px;color:var(--ink-2)}
+@media (max-width:1000px){.hero .wrap{grid-template-columns:1fr}.reelwrap{justify-self:start;width:min(calc(100% - 18px),360px);margin-left:18px}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.terms{grid-template-columns:1fr}.creator .wrap{grid-template-columns:1fr}.creator .media,.creator.flip .media{order:2}.media{justify-self:start;width:min(100%,400px)}}
+@media (max-width:760px){nav.main{display:none}.pilot,.packages{grid-template-columns:1fr}.index{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.brand,.btn{white-space:nowrap}
+@media (max-width:440px){.steps{grid-template-columns:1fr}.reelcap{left:-12px}.media{width:100%}.brand{font-size:21px;gap:8px}.navr{gap:10px}.lang a{padding:5px 8px;font-size:11px}.btn.sm.hdr-cta{padding:8px 13px;font-size:13px}}
+@media (max-width:370px){header.site .wrap{padding-inline:12px;gap:8px}.brand{font-size:18px}.brand i{display:none}.navr{gap:7px}.lang a{padding:4px 6px;font-size:10.5px}.btn.sm.hdr-cta{padding:7px 10px;font-size:12px}}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top"><i aria-hidden="true"></i>Rivan Studio</a>
+    <div class="navr">
+      <nav class="main" aria-label="Main">
+        <a href="#cast" data-i18n="nav_cast">Cast</a>
+        <a href="#prices" data-i18n="nav_prices">Prices</a>
+        <a href="#contact" data-i18n="nav_contact">Contact</a>
+      </nav>
+      <nav class="lang" aria-label="Language">
+        <a href="/" hreflang="en" lang="en" aria-current="{{en_pressed}}">EN</a>
+        <a href="/no/" hreflang="nb" lang="nb" aria-current="{{no_pressed}}">NO</a>
+      </nav>
+      <a class="btn sm hdr-cta" href="mailto:partnerships@rivanstudio.com?{{mail:}}" data-i18n="cta_pilot">Order a pilot</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div class="copy">
+        <span class="eyebrow" data-i18n="hero_eyebrow">Independent creator studio · Norway</span>
+        <h1 id="hero-h" data-i18n-html="hero_h">Video ads starring <em>our own</em> AI characters.</h1>
+        <p class="lead" data-i18n="hero_lead">Pick a character, send us your product photos, and get a vertical video for your social ads within 48 hours. Every video is clearly labelled as AI-generated.</p>
+        <div class="row">
+          <a class="btn" href="mailto:partnerships@rivanstudio.com?{{mail:}}"><span data-i18n="cta_pilot">Order a pilot</span><span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn line" href="#cast" data-i18n="hero_cast">Meet the cast</a>
+        </div>
+        <span class="pricehint" data-i18n-html="hero_price">Pilot <b>NOK 990</b> · 3 videos <b>NOK 2,490</b> · outside Norway <b>EUR 89</b> / <b>EUR 229</b></span>
+        <ul class="meta">
+          <li data-i18n="meta1">Labelled as AI in every video</li>
+          <li data-i18n="meta2">Delivered within 48 hours</li>
+          <li data-i18n="meta3">Made in Norway</li>
+        </ul>
+      </div>
+      <div class="reelwrap">
+        <div class="reel"><video autoplay muted loop playsinline preload="metadata" poster="/media/showreel-orin-poster.jpg" aria-label="Showreel: Orin, a fictional AI character, shows off some confident footwork in a laundromat."><source src="/media/showreel-orin.mp4" type="video/mp4"></video></div>
+        <span class="reelcap"><i aria-hidden="true"></i><span data-i18n="reel_cap">Showreel · Orin</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="cast" class="block" aria-labelledby="cast-h">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow" data-i18n="cast_eyebrow">The cast</span>
+        <h2 id="cast-h" data-i18n-html="cast_h">Meet the <em>cast</em>.</h2>
+        <p class="lead" data-i18n="cast_lead">Fictional characters we create and run ourselves, each with their own accounts and audience. We make them with AI tools and review every frame before anything is published.</p>
+      </div>
+      <nav class="index reveal" aria-label="The cast">
+        <a class="tile" href="#elise"><img src="/media/tile-elise-cube.jpg" alt="" loading="lazy"><span><small>01</small><b>Elise</b></span></a>
+        <a class="tile" href="#orin"><img src="/media/tile-orin-spin.jpg" alt="" loading="lazy"><span><small>02</small><b>Orin</b></span></a>
+        <a class="tile soon" href="#ada"><i class="soon-note" data-i18n="tile_soon">New work coming</i><span><small>03</small><b>Ada</b></span></a>
+        <a class="tile soon" href="#vera"><i class="soon-note" data-i18n="tile_soon">New work coming</i><span><small>04</small><b>Vera</b></span></a>
+      </nav>
+    </div>
+  </section>
+
+  <section id="elise" class="creator" aria-labelledby="elise-h">
+    <div class="wrap">
+      <div class="media reveal">
+        <div class="frame"><video controls muted playsinline preload="none" poster="/media/elise-cube-basket-poster.jpg" aria-label="Elise's Short: how to measure a basket for a cube shelf"><source src="/media/elise-cube-basket.mp4" type="video/mp4"></video></div>
+      </div>
+      <div class="body reveal">
+        <span class="num">01</span>
+        <h2 id="elise-h">Elise</h2>
+        <p class="role" data-i18n="elise_role">Before you buy: the home editor who shows what to check first.</p>
+        <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Best for</span><p class="fit" data-i18n="elise_fit">Rugs, lighting, textiles, storage, kitchenware.</p></div>
+        <p class="vdesc" data-i18n="elise_cube">Elise's videos are text-led on purpose: the product, the measurement and an on-screen checklist, with her voice over it, so your product stays the star. Sample: measure a cube-shelf basket handle to handle, not the body. Live on YouTube Shorts.</p>
+        <p class="pricehint" data-i18n-html="creator_price">Pilot <b>EUR 89</b> · in Norway <b>NOK 990</b> · excl. VAT</p>
+        <div class="links"><a class="btn sm" href="mailto:partnerships@rivanstudio.com?{{mail:Elise}}"><span data-i18n="elise_book">Order a video with Elise</span><span class="arrow" aria-hidden="true">→</span></a><a href="https://www.instagram.com/elisesayerhome/" rel="noopener">Instagram ↗</a><a href="https://www.youtube.com/shorts/jTsbxNkm16I" rel="noopener">YouTube ↗</a></div>
+        <p class="plainmail" data-i18n="or_write">Or write to partnerships@rivanstudio.com</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="orin" class="creator flip" aria-labelledby="orin-h">
+    <div class="wrap">
+      <div class="media reveal">
+        <div class="frame"><video controls muted playsinline loop preload="none" poster="/media/orin-poster.jpg"><source src="/media/orin-reel.mp4" type="video/mp4"></video></div>
+      </div>
+      <div class="body reveal">
+        <span class="num">02</span>
+        <h2 id="orin-h">Orin</h2>
+        <p class="role" data-i18n="orin_role">Silent comedy. Treats everyday things like a championship.</p>
+        <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Best for</span><p class="fit" data-i18n="orin_fit">Snacks, drinks, gadgets, apps, anything with humour.</p></div>
+        <p class="vdesc" data-i18n="orin_vid">Video: Orin shows off some very confident footwork while his laundry spins.</p>
+        <p class="pricehint" data-i18n-html="creator_price">Pilot <b>EUR 89</b> · in Norway <b>NOK 990</b> · excl. VAT</p>
+        <div class="links"><a class="btn sm" href="mailto:partnerships@rivanstudio.com?{{mail:Orin}}"><span data-i18n="orin_book">Order a video with Orin</span><span class="arrow" aria-hidden="true">→</span></a><a href="https://www.tiktok.com/@orinundercontrol" rel="noopener">TikTok ↗</a><a href="https://www.instagram.com/orinundercontrol/" rel="noopener">Instagram ↗</a></div>
+        <p class="plainmail" data-i18n="or_write">Or write to partnerships@rivanstudio.com</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ada" class="creator" aria-labelledby="ada-h">
+    <div class="wrap">
+      <div class="media reveal">
+        <div class="frame wide placeholder" role="img" aria-label="Ada's new images are being made"><span data-i18n="ada_soon">New images coming</span></div>
+      </div>
+      <div class="body reveal">
+        <span class="num">03</span>
+        <h2 id="ada-h">Ada</h2>
+        <p class="role" data-i18n="ada_role">Before the city wakes. 05:12, and the city is still yours.</p>
+        <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Best for</span><p class="fit" data-i18n="ada_fit">Coffee, activewear, bags, skincare.</p></div>
+        <p class="vdesc" data-i18n="hold_note">Bookable again once her new work is out.</p>
+        <div class="links"><a href="https://www.instagram.com/adanorlin/" rel="noopener">Instagram ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vera" class="creator flip" aria-labelledby="vera-h">
+    <div class="wrap">
+      <div class="media reveal">
+        <div class="frame wide placeholder" role="img" aria-label="Vera's new images are being made"><span data-i18n="vera_soon">New images coming</span></div>
+      </div>
+      <div class="body reveal">
+        <span class="num">04</span>
+        <h2 id="vera-h">Vera</h2>
+        <p class="role" data-i18n="vera_role">Last Light Swim Club. Golden hour on the terrace.</p>
+        <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Best for</span><p class="fit" data-i18n="vera_fit">Swimwear, sunglasses, sun care, linen.</p></div>
+        <p class="vdesc" data-i18n="hold_note">Bookable again once her new work is out.</p>
+        <div class="links"><a href="https://www.instagram.com/veralastlight/" rel="noopener">Instagram ↗</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow" data-i18n="how_eyebrow">How it works</span>
+        <h2 id="how-h" data-i18n-html="how_h">Two days, <em>four steps</em>.</h2>
+      </div>
+      <ol class="steps">
+        <li class="reveal"><b data-i18n="s1_t">Send the product</b><span data-i18n="s1_d">A product link or photos, and where the ad will run.</span></li>
+        <li class="reveal"><b data-i18n="s2_t">Approve the idea</b><span data-i18n="s2_d">Same day: a one-line concept and the first frame.</span></li>
+        <li class="reveal"><b data-i18n="s3_t">Get the video</b><span data-i18n="s3_d">Within 48 hours: a 9:16 MP4, 10–20 seconds, ready for Reels, TikTok and Shorts.</span></li>
+        <li class="reveal"><b data-i18n="s4_t">One round of changes</b><span data-i18n="s4_d">Included in every video.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="prices" class="block" aria-labelledby="price-h">
+    <div class="wrap">
+      <div class="head reveal">
+        <span class="eyebrow" data-i18n="price_eyebrow">Prices</span>
+        <h2 id="price-h" data-i18n-html="price_h">Start with <em>one video</em>.</h2>
+      </div>
+      <div class="packages">
+        <div class="pkg main reveal">
+          <span class="eyebrow" data-i18n="p1_label">Pilot</span>
+          <span class="amount" data-i18n="amt1">NOK 990</span>
+          <span class="note" data-i18n="eur1">Outside Norway: EUR 89</span>
+          <ul><li data-i18n="p1_a">1 video, 10–20 seconds, 9:16</li><li data-i18n="p1_b">1 character of your choice</li><li data-i18n="p1_c">1 round of changes</li><li data-i18n="p1_d">3 months of social use</li></ul>
+          <span class="note" data-i18n="vat">Excl. VAT</span>
+        </div>
+        <div class="pkg reveal">
+          <span class="eyebrow" data-i18n="p2_label">Three videos</span>
+          <span class="amount" data-i18n="amt2">NOK 2,490</span>
+          <span class="note" data-i18n="eur2">Outside Norway: EUR 229</span>
+          <span class="save" data-i18n="p2_save">NOK 480 less than three pilots</span>
+          <ul><li data-i18n="p2_a">3 videos, one or more characters</li><li data-i18n="p2_b">Different hooks, so you can test which ad works</li><li data-i18n="p2_c">1 round of changes per video</li><li data-i18n="p1_d">3 months of social use</li></ul>
+          <span class="note" data-i18n="vat">Excl. VAT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" aria-labelledby="terms-h">
+    <div class="wrap terms">
+      <div class="head reveal" style="margin-bottom:0">
+        <span class="eyebrow" data-i18n="terms_eyebrow">Straight terms</span>
+        <h2 id="terms-h" data-i18n-html="terms_h">What you get, and <em>what we don't claim</em>.</h2>
+      </div>
+      <ul class="reveal">
+        <li data-i18n="t1">Made with AI and labelled "AI-generated" in the video. The characters are fictional.</li>
+        <li data-i18n="t2">We never say a character has used, tested or recommends your product from experience. The product claims stay yours.</li>
+        <li data-i18n="t3">Built from your product photos, so there's nothing to ship.</li>
+        <li data-i18n="t4">Use it in your organic and paid social for 3 months. Longer use on request.</li>
+        <li data-i18n="t5">Delivered without music, so you can add a track your ad account is licensed for.</li>
+        <li data-i18n="t6">You're buying the video, not our follower count. We don't promise reach.</li>
+        <li data-i18n="t7">Invoice from Rivan Studio after delivery. Prices exclude VAT.</li>
+        <li data-i18n="t9">If the first frame doesn't pass your approval, there is nothing to pay.</li>
+        <li data-i18n="t8">Your product photos go through third-party AI tools. Unreleased products stay on our own computer and are made with local tools only.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="faq" class="block" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="head">
+        <span class="eyebrow" data-i18n="faq_eyebrow">Questions</span>
+        <h2 id="faq-h" data-i18n-html="faq_h">Short <em>answers</em>.</h2>
+      </div>
+      <div class="faq">
+{{faq}}
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="block contact" aria-labelledby="contact-h">
+    <div class="wrap reveal">
+      <span class="eyebrow" id="contact-h" data-i18n="contact_eyebrow">Order a pilot or ask a question</span>
+      <a class="addr" href="mailto:partnerships@rivanstudio.com">partnerships@rivanstudio.com</a>
+      <p class="human" data-i18n="human">Rivan Studio is run by Aksel Jakobsen Rivan in Norway.</p>
+      <a class="btn" href="mailto:partnerships@rivanstudio.com?{{mail:}}"><span data-i18n="cta_write">Write to us</span><span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span><b>Rivan Studio</b> · <span data-i18n="op">Operated by AKSEL JAKOBSEN RIVAN, trading as Rivan. Norway.</span> <a href="mailto:admin@rivanstudio.com">admin@rivanstudio.com</a> · <a href="mailto:partnerships@rivanstudio.com">partnerships@rivanstudio.com</a></span>
+    <span data-i18n="f1">Our creators are virtual personalities developed and operated by Rivan Studio. Examples on this page are our own content, not client work.</span>
+    <span data-i18n-html="f2">Privacy: this site sets no cookies and uses no analytics, forms or third-party fonts. It's hosted on GitHub Pages, which processes technical data such as IP addresses to deliver the page (<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's privacy statement</a>). If you email us, we use your message and address only to reply.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var els = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
+  var below = els.filter(function(e){ return e.getBoundingClientRect().top > window.innerHeight; });
+  if (!below.length) return;
+  document.documentElement.classList.add('js');
+  els.forEach(function(e){ if (below.indexOf(e) < 0) e.classList.add('in'); });
+  var io = new IntersectionObserver(function(entries){ entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } }); }, {rootMargin:'0px 0px -6% 0px'});
+  below.forEach(function(e){ io.observe(e); });
+  setTimeout(function(){ els.forEach(function(e){ e.classList.add('in'); }); }, 4000);
+})();
+</script>
+</body>
+</html>
