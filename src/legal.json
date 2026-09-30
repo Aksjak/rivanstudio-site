@@ -1,0 +1,21 @@
+{
+  "privacy": {
+    "title": "Rivan Studio Publisher: Privacy Policy",
+    "updated": "Last updated: 1 October 2026",
+    "paras": [
+      "Rivan Studio Publisher is an internal tool run by Rivan Studio (Aksel Jakobsen Rivan, ENK, org. no. 937 616 716, Norway). It uploads videos that Rivan Studio has made to social media accounts that Rivan Studio owns and operates.",
+      "What we access: when an account owner signs in, the platform (Instagram, TikTok or YouTube) gives the tool an access token and basic account information (account ID, username). The tool uses these only to upload videos and read back the published post (link, caption, duration, view counts).",
+      "What we store: access tokens are kept in the operating system's encrypted credential store on our own computer. Post IDs and links are kept in our production records. We do not collect data about other users, followers or viewers, and we do not sell or share any data.",
+      "Deleting data: you can revoke access at any time in the platform's settings (Instagram: Settings > Website permissions; TikTok: Settings > Security > Manage app permissions; Google: myaccount.google.com/permissions). To have us delete stored tokens and records, email admin@rivanstudio.com; we delete them within 30 days.",
+      "YouTube: this tool uses YouTube API Services. By using it you agree to the YouTube Terms of Service (https://www.youtube.com/t/terms). Google's privacy policy: https://policies.google.com/privacy.",
+      "Contact: admin@rivanstudio.com"
+    ]
+  },
+  "terms": {
+    "title": "Rivan Studio Publisher: Terms of Service",
+    "updated": "Last updated: 1 October 2026",
+    "paras": [
+      "Rivan Studio Publisher is an internal publishing tool of Rivan Studio (Aksel Jakobsen Rivan, ENK, org. no. 937 616 716, Norway). It is used only by Rivan Studio to post its own videos to accounts it owns. It is not offered to the public. Use of the tool must follow the terms of each platform it connects to (Instagram, TikTok, YouTube). All videos posted are marked as AI-generated where the platform supports it. The tool is provided as is. Norwegian law applies. Contact: admin@rivanstudio.com"
+    ]
+  }
+}
