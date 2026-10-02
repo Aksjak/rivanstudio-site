@@ -109,6 +109,12 @@
     "status_soon":  "Nytt arbeid på vei",
     "elise_cap":  "Eksempel · Elise · ute på YouTube Shorts",
     "orin_cap":  "Eksempelreklame · Orin · oppdiktet merke NORD",
+    "prod_cap":  "Eksempelreklame · bare produktet · håndkrem uten merke",
+    "prod_h":  "Bare produktet",
+    "prod_role":  "Ingen figur i bildet. Bare produktet ditt, i en scene som passer det.",
+    "prod_fit":  "Hudpleie, interiør, mat og alt som selger på hvordan det ser ut og kjennes.",
+    "prod_vid":  "Eksempelreklame: en enkel håndkrem på en baderomshylle, klemt ut og smurt inn, med én replikk. Hvert bilde er KI-generert. Lyd på.",
+    "prod_book":  "Bestill en produktvideo",
     "next_eyebrow":  "Under produksjon",
     "next_h":  "Ada og Vera blir med <em>når det nye arbeidet deres er ute</em>."
 }
