@@ -15,3 +15,16 @@ for f in ["index.html", "no/index.html"]:
 e = dict(pat.findall(pages["index.html"]))
 n = dict(pat.findall(pages["no/index.html"]))
 print("untranslated:", [k for k in e if k in n and e[k] == n[k]])
+
+# Guard against UTF-8 text that was re-saved as Windows-1252 (shows as "Â·" / "â†’" on phones)
+# and against a byte-order mark before <!doctype>.
+bad = []
+for f in ["src/template.html", "index.html", "no/index.html", "privacy/index.html", "terms/index.html"]:
+    b = (root / f).read_bytes()
+    t = b.decode("utf-8")
+    if b.startswith(b"\xef\xbb\xbf"):
+        bad.append(f + ": BOM")
+    bad += [f + ": " + m for m in sorted(set(re.findall(r"(?:Â|Ã|â€|â†)\S?", t)))]
+print("encoding:", bad or "ok")
+if bad:
+    raise SystemExit(1)
