@@ -65,6 +65,7 @@ header.site{position:sticky;top:0;z-index:40;background:rgba(245,244,240,.88);ba
 header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:13px}
 .brand{font-family:var(--serif);font-size:25px;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:9px}
 .brand:hover{color:var(--ink)}
+.brand{position:relative}.brand::before{content:"";position:absolute;inset:-6px 0}
 .brand i{width:7px;height:7px;border-radius:50%;background:var(--accent)}
 .navr{display:flex;align-items:center;gap:20px}
 nav.main{display:flex;gap:22px}
@@ -202,7 +203,7 @@ a:hover .arrow{transform:translateX(3px)}
 footer.site{border-top:1px solid var(--line);padding-block:30px 44px;font-size:13px;color:var(--ink-3)}
 footer.site .wrap{display:flex;flex-direction:column;gap:8px}
 footer.site a{color:var(--ink-2);position:relative}
-footer.site a::before{content:"";position:absolute;inset:-12px -4px}
+footer.site a::before{content:"";position:absolute;inset:-14px -4px}
 
 main{display:flex;flex-direction:column}
 section{scroll-margin-top:64px}
@@ -306,7 +307,7 @@ section{scroll-margin-top:64px}
   <section id="elise" class="creator" aria-labelledby="elise-h">
     <div class="wrap">
       <div class="media">
-        <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/elise-sample-poster.jpg?v=2" aria-label="Elise's Short: how to measure a basket for a cube shelf" data-i18n-aria="aria_elise"><source src="/media/elise-sample.mp4?v=2" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/elise-sample-poster.jpg?v=3" aria-label="Elise's Short: how to measure a basket for a cube shelf" data-i18n-aria="aria_elise"><source src="/media/elise-sample.mp4?v=3" type="video/mp4"></video></div></div>
         <p class="cap"><i aria-hidden="true"></i><span data-i18n="elise_cap">Sample · Elise · live on YouTube Shorts</span></p>
       </div>
       <div class="body">
@@ -325,7 +326,7 @@ section{scroll-margin-top:64px}
   <section id="orin" class="creator flip" aria-labelledby="orin-h">
     <div class="wrap">
       <div class="media">
-        <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/orin-nord-sample-poster-v3.jpg?v=2" aria-label="Sample ad: Orin takes the first sip of NORD, a made-up lingonberry sparkling water, very seriously" data-i18n-aria="aria_orin"><source src="/media/orin-nord-sample.mp4?v=2" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/orin-nord-sample-poster-v3.jpg?v=3" aria-label="Sample ad: Orin takes the first sip of NORD, a made-up lingonberry sparkling water, very seriously" data-i18n-aria="aria_orin"><source src="/media/orin-nord-sample.mp4?v=3" type="video/mp4"></video></div></div>
         <p class="cap"><i aria-hidden="true"></i><span data-i18n="orin_cap">Sample ad · Orin · made-up brand NORD</span></p>
       </div>
       <div class="body">
@@ -344,7 +345,7 @@ section{scroll-margin-top:64px}
   <section id="product" class="creator" aria-labelledby="product-h">
     <div class="wrap">
       <div class="media">
-        <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/handcream-sample-poster.jpg?v=2" aria-label="Sample ad without a creator: a plain hand cream tube on a bathroom shelf, a hand squeezes out a drop and rubs it in" data-i18n-aria="aria_prod"><source src="/media/handcream-sample.mp4?v=2" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/handcream-sample-poster.jpg?v=3" aria-label="Sample ad without a creator: a plain hand cream tube on a bathroom shelf, a hand squeezes out a drop and rubs it in" data-i18n-aria="aria_prod"><source src="/media/handcream-sample.mp4?v=3" type="video/mp4"></video></div></div>
         <p class="cap"><i aria-hidden="true"></i><span data-i18n="prod_cap">Sample ad · product only · unbranded hand cream</span></p>
       </div>
       <div class="body">
