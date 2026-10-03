@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="nb">
 <head>
 <meta charset="utf-8">
@@ -97,7 +97,7 @@ a:hover .arrow{transform:translateX(3px)}
 .hero .row,.hero .meta{justify-content:center}
 .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .pricehint{font-size:14.5px;color:var(--ink-2)}
-.pricehint b{color:var(--ink);font-weight:600}
+.pricehint b{color:var(--ink);font-weight:600;white-space:nowrap}
 .meta{display:flex;flex-wrap:wrap;gap:8px 22px;list-style:none;margin:4px 0 0;padding:20px 0 0;border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
 .meta li{display:flex;align-items:center;gap:9px}
 .meta li::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
@@ -237,7 +237,7 @@ section{scroll-margin-top:64px}
         <h1 id="hero-h" data-i18n-html="hero_h">Videoannonser med <em>våre egne</em> KI-karakterer.</h1>
         <p class="lead" data-i18n="hero_lead">Velg en karakter, send oss produktbildene, og få en vertikal video til annonsene deres innen 48 timer. Alle videoer er tydelig merket som KI-generert.</p>
         <div class="row">
-          <a class="btn" href="mailto:partnerships@rivanstudio.com?subject=Pilotvideo&amp;body=Hei%20Rivan%20Studio%2C%0A%0AProdukt%20%28en%20lenke%2C%20eller%20legg%20ved%202-3%20bilder%29%3A%0AHvor%20annonsen%20skal%20kj%C3%B8res%3A%0AKarakter%3A%20Elise%2C%20Orin%2C%20Ada%20eller%20Vera%0AFirmanavn%20og%20land%20for%20fakturaen%3A%0A%0A"><span data-i18n="cta_pilot">Bestill en pilot</span><span class="arrow" aria-hidden="true">â†’</span></a>
+          <a class="btn" href="mailto:partnerships@rivanstudio.com?subject=Pilotvideo&amp;body=Hei%20Rivan%20Studio%2C%0A%0AProdukt%20%28en%20lenke%2C%20eller%20legg%20ved%202-3%20bilder%29%3A%0AHvor%20annonsen%20skal%20kj%C3%B8res%3A%0AKarakter%3A%20Elise%2C%20Orin%2C%20Ada%20eller%20Vera%0AFirmanavn%20og%20land%20for%20fakturaen%3A%0A%0A"><span data-i18n="cta_pilot">Bestill en pilot</span><span class="arrow" aria-hidden="true">→</span></a>
           <a class="btn line" href="#cast" data-i18n="hero_cast">Møt karakterene</a>
         </div>
         <span class="pricehint" data-i18n-html="hero_price">Pilot <b>990 kr</b> · 3 videoer <b>2 490 kr</b> · ingen mva legges til</span>
@@ -283,7 +283,7 @@ section{scroll-margin-top:64px}
           <p class="role" data-i18n="ada_role">Før byen våkner. 05:12, og byen er fortsatt din.</p>
           <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Passer for</span><p class="fit" data-i18n="ada_fit2">Kaffe, frokost, pendling og produkter til morgenrutinen.</p></div>
           <p class="vdesc" data-i18n="ada_vid">Fra hennes siste Short: årets første kalde morgen. Lyd på.</p>
-          <div class="links"><a class="btn sm" href="mailto:partnerships@rivanstudio.com?subject=Pilotvideo%3A%20Ada&amp;body=Hei%20Rivan%20Studio%2C%0A%0AProdukt%20%28en%20lenke%2C%20eller%20legg%20ved%202-3%20bilder%29%3A%0AHvor%20annonsen%20skal%20kj%C3%B8res%3A%0AKarakter%3A%20Ada%0AFirmanavn%20og%20land%20for%20fakturaen%3A%0A%0A"><span data-i18n="ada_book">Bestill en video med Ada</span><span class="arrow" aria-hidden="true">â†’</span></a><a href="https://www.instagram.com/adanorlin/" rel="noopener">Instagram â†—</a><a href="https://youtube.com/shorts/OyjGpZjvK6E" rel="noopener">YouTube â†—</a></div>
+          <div class="links"><a class="btn sm" href="mailto:partnerships@rivanstudio.com?subject=Pilotvideo%3A%20Ada&amp;body=Hei%20Rivan%20Studio%2C%0A%0AProdukt%20%28en%20lenke%2C%20eller%20legg%20ved%202-3%20bilder%29%3A%0AHvor%20annonsen%20skal%20kj%C3%B8res%3A%0AKarakter%3A%20Ada%0AFirmanavn%20og%20land%20for%20fakturaen%3A%0A%0A"><span data-i18n="ada_book">Bestill en video med Ada</span><span class="arrow" aria-hidden="true">→</span></a><a href="https://www.instagram.com/adanorlin/" rel="noopener">Instagram ↗</a><a href="https://youtube.com/shorts/OyjGpZjvK6E" rel="noopener">YouTube ↗</a></div>
         </article>
         <article id="vera" class="card" aria-labelledby="vera-h">
           <span class="num">04</span>
@@ -292,7 +292,7 @@ section{scroll-margin-top:64px}
           <p class="role" data-i18n="vera_role2">Last Light Swim Club. Gyllen time ved sjøbadet.</p>
           <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Passer for</span><p class="fit" data-i18n="vera_fit2">Håndklær, badetøy, svømmebriller, flasker og utstyr til utebading.</p></div>
           <p class="vdesc" data-i18n="vera_vid">Fra hennes siste Short: tøying ved sjøbadet i solnedgang. Kan bestilles snart. Lyd på.</p>
-          <div class="links"><a href="https://www.instagram.com/veralastlight/" rel="noopener">Instagram â†—</a><a href="https://www.youtube.com/shorts/5NLDkYwrAEE" rel="noopener">YouTube â†—</a></div>
+          <div class="links"><a href="https://www.instagram.com/veralastlight/" rel="noopener">Instagram ↗</a><a href="https://www.youtube.com/shorts/5NLDkYwrAEE" rel="noopener">YouTube ↗</a></div>
         </article>
       </div>
     </div>
@@ -311,7 +311,7 @@ section{scroll-margin-top:64px}
         <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Passer for</span><p class="fit" data-i18n="elise_fit">Tepper, lys, tekstiler, oppbevaring, kjøkkenutstyr.</p></div>
         <p class="vdesc" data-i18n="elise_cube">Eksempel: før du kjøper en kurv til kubehyllen, mål fra hank til hank, ikke selve kurven. Ligger ute på YouTube Shorts. Nye videoer der Elise snakker og måler foran kamera er under arbeid.</p>
         <p class="pricehint" data-i18n-html="creator_price">Pilot <b>990 kr</b> · ingen mva legges til</p>
-        <div class="links"><a class="btn sm" href="mailto:partnerships@rivanstudio.com?subject=Pilotvideo%3A%20Elise&amp;body=Hei%20Rivan%20Studio%2C%0A%0AProdukt%20%28en%20lenke%2C%20eller%20legg%20ved%202-3%20bilder%29%3A%0AHvor%20annonsen%20skal%20kj%C3%B8res%3A%0AKarakter%3A%20Elise%0AFirmanavn%20og%20land%20for%20fakturaen%3A%0A%0A"><span data-i18n="elise_book">Bestill en video med Elise</span><span class="arrow" aria-hidden="true">â†’</span></a><a href="https://www.instagram.com/elisesayerhome/" rel="noopener">Instagram â†—</a><a href="https://www.youtube.com/shorts/jmCbqT2g4Tg" rel="noopener">YouTube â†—</a></div>
+        <div class="links"><a class="btn sm" href="mailto:partnerships@rivanstudio.com?subject=Pilotvideo%3A%20Elise&amp;body=Hei%20Rivan%20Studio%2C%0A%0AProdukt%20%28en%20lenke%2C%20eller%20legg%20ved%202-3%20bilder%29%3A%0AHvor%20annonsen%20skal%20kj%C3%B8res%3A%0AKarakter%3A%20Elise%0AFirmanavn%20og%20land%20for%20fakturaen%3A%0A%0A"><span data-i18n="elise_book">Bestill en video med Elise</span><span class="arrow" aria-hidden="true">→</span></a><a href="https://www.instagram.com/elisesayerhome/" rel="noopener">Instagram ↗</a><a href="https://www.youtube.com/shorts/jmCbqT2g4Tg" rel="noopener">YouTube ↗</a></div>
         <p class="plainmail" data-i18n="or_write">Eller skriv til partnerships@rivanstudio.com</p>
       </div>
     </div>
@@ -330,7 +330,7 @@ section{scroll-margin-top:64px}
         <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Passer for</span><p class="fit" data-i18n="orin_fit">Snacks, drikke, dingser, apper, alt med humor.</p></div>
         <p class="vdesc" data-i18n="orin_vid">Eksempelreklame: Orin tar den første slurken av et oppdiktet tyttebærvann svært alvorlig, og videoen slutter på produktbildet. Slik ser en pilotvideo ut. Lyd på.</p>
         <p class="pricehint" data-i18n-html="creator_price">Pilot <b>990 kr</b> · ingen mva legges til</p>
-        <div class="links"><a class="btn sm" href="mailto:partnerships@rivanstudio.com?subject=Pilotvideo%3A%20Orin&amp;body=Hei%20Rivan%20Studio%2C%0A%0AProdukt%20%28en%20lenke%2C%20eller%20legg%20ved%202-3%20bilder%29%3A%0AHvor%20annonsen%20skal%20kj%C3%B8res%3A%0AKarakter%3A%20Orin%0AFirmanavn%20og%20land%20for%20fakturaen%3A%0A%0A"><span data-i18n="orin_book">Bestill en video med Orin</span><span class="arrow" aria-hidden="true">â†’</span></a><a href="https://www.tiktok.com/@orinundercontrol" rel="noopener">TikTok â†—</a><a href="https://www.instagram.com/orinundercontrol/" rel="noopener">Instagram â†—</a></div>
+        <div class="links"><a class="btn sm" href="mailto:partnerships@rivanstudio.com?subject=Pilotvideo%3A%20Orin&amp;body=Hei%20Rivan%20Studio%2C%0A%0AProdukt%20%28en%20lenke%2C%20eller%20legg%20ved%202-3%20bilder%29%3A%0AHvor%20annonsen%20skal%20kj%C3%B8res%3A%0AKarakter%3A%20Orin%0AFirmanavn%20og%20land%20for%20fakturaen%3A%0A%0A"><span data-i18n="orin_book">Bestill en video med Orin</span><span class="arrow" aria-hidden="true">→</span></a><a href="https://www.tiktok.com/@orinundercontrol" rel="noopener">TikTok ↗</a><a href="https://www.instagram.com/orinundercontrol/" rel="noopener">Instagram ↗</a></div>
         <p class="plainmail" data-i18n="or_write">Eller skriv til partnerships@rivanstudio.com</p>
       </div>
     </div>
@@ -348,7 +348,7 @@ section{scroll-margin-top:64px}
         <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Passer for</span><p class="fit" data-i18n="prod_fit">Hudpleie, interiør, mat og alt som selger på hvordan det ser ut og kjennes.</p></div>
         <p class="vdesc" data-i18n="prod_vid">Eksempelreklame: en enkel håndkrem på en baderomshylle, klemt ut og smurt inn, med én replikk. Hvert bilde er KI-generert. Lyd på.</p>
         <p class="pricehint" data-i18n-html="creator_price">Pilot <b>990 kr</b> · ingen mva legges til</p>
-        <div class="links"><a class="btn sm" href="mailto:partnerships@rivanstudio.com?subject=Pilotvideo&amp;body=Hei%20Rivan%20Studio%2C%0A%0AProdukt%20%28en%20lenke%2C%20eller%20legg%20ved%202-3%20bilder%29%3A%0AHvor%20annonsen%20skal%20kj%C3%B8res%3A%0AKarakter%3A%20Elise%2C%20Orin%2C%20Ada%20eller%20Vera%0AFirmanavn%20og%20land%20for%20fakturaen%3A%0A%0A"><span data-i18n="prod_book">Bestill en produktvideo</span><span class="arrow" aria-hidden="true">â†’</span></a></div>
+        <div class="links"><a class="btn sm" href="mailto:partnerships@rivanstudio.com?subject=Pilotvideo&amp;body=Hei%20Rivan%20Studio%2C%0A%0AProdukt%20%28en%20lenke%2C%20eller%20legg%20ved%202-3%20bilder%29%3A%0AHvor%20annonsen%20skal%20kj%C3%B8res%3A%0AKarakter%3A%20Elise%2C%20Orin%2C%20Ada%20eller%20Vera%0AFirmanavn%20og%20land%20for%20fakturaen%3A%0A%0A"><span data-i18n="prod_book">Bestill en produktvideo</span><span class="arrow" aria-hidden="true">→</span></a></div>
         <p class="plainmail" data-i18n="or_write">Eller skriv til partnerships@rivanstudio.com</p>
       </div>
     </div>
@@ -437,16 +437,16 @@ section{scroll-margin-top:64px}
       <span class="eyebrow" id="contact-h" data-i18n="contact_eyebrow">Bestill en pilot eller still et spørsmål</span>
       <a class="addr" href="mailto:partnerships@rivanstudio.com">partnerships@rivanstudio.com</a>
       <p class="human" data-i18n="human">Rivan Studio drives av Aksel Jakobsen Rivan i Norge.</p>
-      <a class="btn" href="mailto:partnerships@rivanstudio.com?subject=Pilotvideo&amp;body=Hei%20Rivan%20Studio%2C%0A%0AProdukt%20%28en%20lenke%2C%20eller%20legg%20ved%202-3%20bilder%29%3A%0AHvor%20annonsen%20skal%20kj%C3%B8res%3A%0AKarakter%3A%20Elise%2C%20Orin%2C%20Ada%20eller%20Vera%0AFirmanavn%20og%20land%20for%20fakturaen%3A%0A%0A"><span data-i18n="cta_write">Skriv til oss</span><span class="arrow" aria-hidden="true">â†’</span></a>
+      <a class="btn" href="mailto:partnerships@rivanstudio.com?subject=Pilotvideo&amp;body=Hei%20Rivan%20Studio%2C%0A%0AProdukt%20%28en%20lenke%2C%20eller%20legg%20ved%202-3%20bilder%29%3A%0AHvor%20annonsen%20skal%20kj%C3%B8res%3A%0AKarakter%3A%20Elise%2C%20Orin%2C%20Ada%20eller%20Vera%0AFirmanavn%20og%20land%20for%20fakturaen%3A%0A%0A"><span data-i18n="cta_write">Skriv til oss</span><span class="arrow" aria-hidden="true">→</span></a>
     </div>
   </section>
 </main>
 
 <footer class="site">
   <div class="wrap">
-    <span><b>Rivan Studio</b> Â· <span data-i18n="op">Aksel Jakobsen Rivan, handelsnavn Rivan Studio · Org.nr. 937 616 716 · Leitevegen 16A, 5357 Fjell</span></span>
-    <span><a href="mailto:aksel@rivanstudio.com">aksel@rivanstudio.com</a> Â· <a href="mailto:partnerships@rivanstudio.com">partnerships@rivanstudio.com</a></span>
-    <span><a href="/privacy/" data-i18n="foot_privacy">Personvernerklæring</a> Â· <a href="/terms/" data-i18n="foot_terms">Vilkår for bruk</a></span>
+    <span><b>Rivan Studio</b> · <span data-i18n="op">Aksel Jakobsen Rivan, handelsnavn Rivan Studio · Org.nr. 937 616 716 · Leitevegen 16A, 5357 Fjell</span></span>
+    <span><a href="mailto:aksel@rivanstudio.com">aksel@rivanstudio.com</a> · <a href="mailto:partnerships@rivanstudio.com">partnerships@rivanstudio.com</a></span>
+    <span><a href="/privacy/" data-i18n="foot_privacy">Personvernerklæring</a> · <a href="/terms/" data-i18n="foot_terms">Vilkår for bruk</a></span>
     <span data-i18n="f1">Kreatørene våre er virtuelle personligheter utviklet og drevet av Rivan Studio. Eksemplene på siden er vårt eget innhold, ikke kundeoppdrag.</span>
     <span data-i18n-html="f2">Personvern: siden setter ingen informasjonskapsler og bruker ingen analyse, skjemaer eller eksterne fonter. Den driftes på GitHub Pages, som behandler tekniske data som IP-adresser for å levere siden (<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHubs personvernerklæring</a>). Sender du oss e-post, bruker vi meldingen og adressen kun til å svare.</span>
   </div>
