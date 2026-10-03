@@ -9,7 +9,7 @@
 <meta property="og:title" content="KI-videoannonser for europeiske merkevarer · Rivan Studio">
 <meta property="og:description" content="Videoannonser med våre egne fiktive KI-karakterer. Pilot 990 kr, levert innen 48 timer, merket som KI-generert.">
 <meta property="og:image" content="https://rivanstudio.com/media/share.png">
-<meta property="og:image:alt" content="Rivan Studio: video ads starring our own AI characters">
+<meta property="og:image:alt" content="Rivan Studio: videoannonser med våre egne KI-karakterer">
 <meta property="og:url" content="https://rivanstudio.com/no/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Rivan Studio">
@@ -36,7 +36,7 @@
 :root{
   color-scheme:light;
   --paper:#f5f4f0; --paper-2:#edebe5; --card:#fbfaf8;
-  --ink:#161618; --ink-2:#4b4a4f; --ink-3:#74727a;
+  --ink:#161618; --ink-2:#4b4a4f; --ink-3:#66646c;
   --line:#dbd9d1; --line-2:#c5c2b9;
   --accent:#2e5a46; --accent-2:#1f4535; --accent-soft:#e1eae4;
   --serif:"Instrument Serif","Iowan Old Style","Palatino Linotype",Georgia,serif;
@@ -70,9 +70,11 @@ header.site .wrap{display:flex;align-items:center;justify-content:space-between;
 nav.main{display:flex;gap:22px}
 nav.main a{color:var(--ink-2);text-decoration:none;font-size:14.5px;font-weight:500}
 nav.main a:hover{color:var(--ink)}
-.lang{display:flex;border:1px solid var(--line-2);border-radius:999px;overflow:hidden}
+.lang{display:flex;border:1px solid var(--line-2);border-radius:999px}
 .lang a{font-size:11.5px;font-weight:600;letter-spacing:.08em;color:var(--ink-3);text-decoration:none;padding:6px 10px}
-.lang a[aria-current="true"]{background:var(--ink);color:var(--paper)}
+.lang a[aria-current="true"]{background:var(--ink);color:var(--paper);border-radius:999px}
+.lang a,.hdr-cta{position:relative}
+.lang a::before,.hdr-cta::before{content:"";position:absolute;inset:-9px -2px}
 .btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600;font-size:15px;padding:14px 22px;border-radius:999px;transition:background .2s,transform .3s var(--ease)}
 .btn:hover{background:var(--accent-2);color:var(--paper);transform:translateY(-1px)}
 .btn.line{background:transparent;color:var(--ink);border:1px solid var(--line-2)}
@@ -86,6 +88,11 @@ a:hover .arrow{transform:translateX(3px)}
 .phone{background:#111;border-radius:26px;padding:6px;box-shadow:0 30px 60px -30px rgba(22,22,24,.5),0 0 0 1px rgba(22,22,24,.06)}
 .phone .screen{position:relative;aspect-ratio:9/16;border-radius:20px;overflow:hidden;background:#000}
 .phone video,.phone img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:10px;z-index:1;pointer-events:none;background:rgba(17,17,17,.74);color:#fff;font-size:13px;font-weight:600;line-height:1.2;padding:4px 8px;border-radius:4px}
+.tag.l{left:10px}.tag.r{right:10px}
+.reelbtn{position:absolute;right:12px;bottom:12px;z-index:1;min-width:44px;min-height:44px;padding:0 16px;border:0;border-radius:999px;background:rgba(17,17,17,.74);color:#fff;font:600 14px/1 var(--sans);cursor:pointer}
+.reelbtn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.reelbtn .play,.reelbtn.paused .pause{display:none}.reelbtn.paused .play{display:inline}
 .cap{font-size:13px;color:var(--ink-3);margin-top:12px;display:flex;gap:8px;align-items:center}
 .cap i{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
 
@@ -190,22 +197,22 @@ a:hover .arrow{transform:translateX(3px)}
 
 /* contact */
 .contact .wrap{display:flex;flex-direction:column;gap:22px;align-items:flex-start}
-.contact .addr{font-family:var(--serif);font-size:clamp(26px,6.6vw,88px);line-height:1;color:var(--ink);text-decoration:none;overflow-wrap:anywhere}
+.contact .addr{padding-block:9px;font-family:var(--serif);font-size:clamp(26px,6.6vw,88px);line-height:1;color:var(--ink);text-decoration:none;overflow-wrap:anywhere}
 .contact .addr:hover{color:var(--accent-2)}
 .human{font-size:15px;color:var(--ink-2)}
 
 footer.site{border-top:1px solid var(--line);padding-block:30px 44px;font-size:13px;color:var(--ink-3)}
 footer.site .wrap{display:flex;flex-direction:column;gap:8px}
 footer.site a{color:var(--ink-2);position:relative}
-footer.site a::before{content:"";position:absolute;inset:-10px -4px}
+footer.site a::before{content:"";position:absolute;inset:-12px -4px}
 
 main{display:flex;flex-direction:column}
 section{scroll-margin-top:64px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 @media (max-width:1000px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.terms{grid-template-columns:1fr}.creator .wrap{grid-template-columns:1fr}.creator .media,.creator.flip .media{order:2}.media{justify-self:start;width:min(100%,380px)}}
 @media (max-width:760px){nav.main{display:none}.hero .eyebrow::before{display:none}.hero .meta{flex-direction:column;align-items:center;gap:10px}.packages,.next{grid-template-columns:1fr}.index a{grid-template-columns:36px minmax(0,1fr) auto;gap:14px}.index .thumb{display:none}}
-@media (max-width:440px){.steps{grid-template-columns:1fr}.media{width:100%}.brand{font-size:21px;gap:8px}.navr{gap:10px}.lang a{padding:5px 8px;font-size:11px}.btn.sm.hdr-cta{padding:8px 13px;font-size:13px}.index a{grid-template-columns:32px minmax(0,1fr);row-gap:8px}.index .pill{grid-column:2}}
-@media (max-width:370px){header.site .wrap{padding-inline:12px;gap:8px}.brand{font-size:18px}.brand i{display:none}.navr{gap:7px}.lang a{padding:4px 6px;font-size:10.5px}.btn.sm.hdr-cta{padding:7px 10px;font-size:12px}}
+@media (max-width:440px){.cap,.note,.plainmail,.pill,.save,footer.site,.eyebrow{font-size:14px}.btn.sm{min-height:44px;font-size:14px}.hero .eyebrow{letter-spacing:.07em}.steps{grid-template-columns:1fr}.media{width:100%}.brand{font-size:21px;gap:8px}.navr{gap:10px}.lang a{padding:5px 9px;font-size:13px}.btn.sm.hdr-cta{min-height:0;padding:8px 13px;font-size:14px}.index a{grid-template-columns:32px minmax(0,1fr);row-gap:8px}.index .pill{grid-column:2}}
+@media (max-width:370px){header.site .wrap{padding-inline:12px;gap:8px}.brand{font-size:18px}.brand i{display:none}.navr{gap:7px}.lang a{padding:4px 7px;font-size:12px}.btn.sm.hdr-cta{padding:7px 10px;font-size:12px}}
 </style>
 </head>
 <body>
@@ -213,14 +220,14 @@ section{scroll-margin-top:64px}
   <div class="wrap">
     <a class="brand" href="#top"><i aria-hidden="true"></i>Rivan Studio</a>
     <div class="navr">
-      <nav class="main" aria-label="Main">
+      <nav class="main" aria-label="Hovedmeny" data-i18n-aria="aria_main">
         <a href="#cast" data-i18n="nav_cast">Karakterer</a>
         <a href="#how" data-i18n="nav_how">Slik fungerer det</a>
         <a href="#prices" data-i18n="nav_prices">Priser</a>
         <a href="#faq" data-i18n="nav_faq">Spørsmål</a>
         <a href="#contact" data-i18n="nav_contact">Kontakt</a>
       </nav>
-      <nav class="lang" aria-label="Language">
+      <nav class="lang" aria-label="Språk" data-i18n-aria="aria_lang">
         <a href="/" hreflang="en" lang="en" aria-current="false">EN</a>
         <a href="/no/" hreflang="nb" lang="nb" aria-current="true">NO</a>
       </nav>
@@ -251,7 +258,7 @@ section{scroll-margin-top:64px}
     <div class="stage">
       <div class="wrap">
         <div class="reelwrap">
-          <div class="phone"><div class="screen"><video autoplay muted loop playsinline preload="metadata" poster="/media/showreel-orin-poster.jpg" aria-label="Showreel: Orin, a fictional AI character, shows off some confident footwork in a laundromat."><source src="/media/showreel-orin.mp4" type="video/mp4"></video></div></div>
+          <div class="phone"><div class="screen"><video class="reel" controls muted loop playsinline preload="metadata" poster="/media/showreel-orin-poster.jpg" aria-label="Showreel: Orin, en fiktiv KI-karakter, viser frem selvsikre dansetrinn på et vaskeri." data-i18n-aria="aria_reel"><source src="/media/showreel-orin.mp4" type="video/mp4"></video><button class="reelbtn paused" type="button" hidden><span class="pause" data-i18n="reel_pause">Pause</span><span class="play" data-i18n="reel_play">Spill av</span></button></div></div>
           <p class="cap"><i aria-hidden="true"></i><span data-i18n="reel_cap">Showreel · Orin · 6 sekunder</span></p>
         </div>
       </div>
@@ -278,7 +285,7 @@ section{scroll-margin-top:64px}
       <div class="next">
         <article id="ada" class="card" aria-labelledby="ada-h">
           <span class="num">03</span>
-          <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/ada-sample-poster.jpg" aria-label="Ada, a fictional AI character, puts on a beanie on a cold morning"><source src="/media/ada-sample.mp4" type="video/mp4"></video></div></div>
+          <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/ada-sample-poster.jpg" aria-label="Ada, en fiktiv KI-karakter, tar på seg en lue en kald morgen" data-i18n-aria="aria_ada"><source src="/media/ada-sample.mp4" type="video/mp4"></video></div></div>
           <h3 id="ada-h">Ada</h3>
           <p class="role" data-i18n="ada_role">Før byen våkner. 05:12, og byen er fortsatt din.</p>
           <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Passer for</span><p class="fit" data-i18n="ada_fit2">Kaffe, frokost, pendling og produkter til morgenrutinen.</p></div>
@@ -287,7 +294,7 @@ section{scroll-margin-top:64px}
         </article>
         <article id="vera" class="card" aria-labelledby="vera-h">
           <span class="num">04</span>
-          <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/vera-sample-poster.jpg" aria-label="Vera, a fictional AI character, stretches on the edge of a sea pool at sunset"><source src="/media/vera-sample.mp4" type="video/mp4"></video></div></div>
+          <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/vera-sample-poster.jpg" aria-label="Vera, en fiktiv KI-karakter, tøyer ut på kanten av et sjøbad i solnedgang" data-i18n-aria="aria_vera"><source src="/media/vera-sample.mp4" type="video/mp4"></video></div></div>
           <h3 id="vera-h">Vera</h3>
           <p class="role" data-i18n="vera_role2">Last Light Swim Club. Gyllen time ved sjøbadet.</p>
           <div class="fitrow"><span class="eyebrow" data-i18n="best_for">Passer for</span><p class="fit" data-i18n="vera_fit2">Håndklær, badetøy, svømmebriller, flasker og utstyr til utebading.</p></div>
@@ -301,7 +308,7 @@ section{scroll-margin-top:64px}
   <section id="elise" class="creator" aria-labelledby="elise-h">
     <div class="wrap">
       <div class="media">
-        <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/elise-sample-poster.jpg" aria-label="Elise's Short: how to measure a basket for a cube shelf"><source src="/media/elise-sample.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/elise-sample-poster.jpg" aria-label="Elises Short: slik måler du en kurv til en kubehylle" data-i18n-aria="aria_elise"><source src="/media/elise-sample.mp4" type="video/mp4"></video><span class="tag l" data-i18n="tag_ai">KI-generert</span></div></div>
         <p class="cap"><i aria-hidden="true"></i><span data-i18n="elise_cap">Eksempel · Elise · ute på YouTube Shorts</span></p>
       </div>
       <div class="body">
@@ -320,7 +327,7 @@ section{scroll-margin-top:64px}
   <section id="orin" class="creator flip" aria-labelledby="orin-h">
     <div class="wrap">
       <div class="media">
-        <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/orin-nord-sample-poster-v3.jpg" aria-label="Sample ad: Orin takes the first sip of NORD, a made-up lingonberry sparkling water, very seriously"><source src="/media/orin-nord-sample.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/orin-nord-sample-poster-v3.jpg" aria-label="Eksempelreklame: Orin tar den første slurken av NORD, et oppdiktet tyttebærvann, svært alvorlig" data-i18n-aria="aria_orin"><source src="/media/orin-nord-sample.mp4" type="video/mp4"></video><span class="tag r" data-i18n="tag_ad">Reklame</span></div></div>
         <p class="cap"><i aria-hidden="true"></i><span data-i18n="orin_cap">Eksempelreklame · Orin · oppdiktet merke NORD</span></p>
       </div>
       <div class="body">
@@ -339,7 +346,7 @@ section{scroll-margin-top:64px}
   <section id="product" class="creator" aria-labelledby="product-h">
     <div class="wrap">
       <div class="media">
-        <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/handcream-sample-poster.jpg" aria-label="Sample ad without a creator: a plain hand cream tube on a bathroom shelf, a hand squeezes out a drop and rubs it in"><source src="/media/handcream-sample.mp4" type="video/mp4"></video></div></div>
+        <div class="phone"><div class="screen"><video controls playsinline preload="none" poster="/media/handcream-sample-poster.jpg" aria-label="Eksempelreklame uten figur: en enkel håndkremtube på en baderomshylle, en hånd klemmer ut en dråpe og smører den inn" data-i18n-aria="aria_prod"><source src="/media/handcream-sample.mp4" type="video/mp4"></video><span class="tag r" data-i18n="tag_ad">Reklame</span></div></div>
         <p class="cap"><i aria-hidden="true"></i><span data-i18n="prod_cap">Eksempelreklame · bare produktet · håndkrem uten merke</span></p>
       </div>
       <div class="body">
@@ -451,5 +458,13 @@ section{scroll-margin-top:64px}
     <span data-i18n-html="f2">Personvern: siden setter ingen informasjonskapsler og bruker ingen analyse, skjemaer eller eksterne fonter. Den driftes på GitHub Pages, som behandler tekniske data som IP-adresser for å levere siden (<a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHubs personvernerklæring</a>). Sender du oss e-post, bruker vi meldingen og adressen kun til å svare.</span>
   </div>
 </footer>
+<script>
+(function(){var v=document.querySelector("video.reel"),b=document.querySelector(".reelbtn");if(!v||!b)return;
+v.removeAttribute("controls");b.hidden=false;
+function sync(){b.classList.toggle("paused",v.paused)}
+b.addEventListener("click",function(){if(v.paused){v.play()}else{v.pause()}});
+v.addEventListener("play",sync);v.addEventListener("pause",sync);
+if(!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)){var r=v.play();if(r&&r.catch)r.catch(sync)}sync()})();
+</script>
 </body>
 </html>

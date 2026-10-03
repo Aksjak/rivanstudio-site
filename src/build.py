@@ -106,7 +106,13 @@ def translate(page):
         val = no[key] if m.group(3) else html.escape(no[key], quote=False)
         return m.group(1) + val + m.group(6)
     pat = re.compile(r'(<(\w+)\b[^>]*\bdata-i18n(-html)?="([\w-]+)"[^>]*>)(.*?)(</\2>)', re.S)
-    return pat.sub(rep, page)
+    page = pat.sub(rep, page)
+
+    def rep_aria(m):
+        key = m.group(2)
+        return ('aria-label="%s"' % html.escape(no[key])) + m.group(1) if key in no else m.group(0)
+    # aria-label="..." data-i18n-aria="key": screen-reader labels get the Norwegian text too
+    return re.sub(r'aria-label="[^"]*"(\s+data-i18n-aria="([\w-]+)")', rep_aria, page)
 
 
 for lang in ("en", "no"):
@@ -119,6 +125,7 @@ for lang in ("en", "no"):
         "{{description}}": html.escape(h["description"]),
         "{{og_title}}": html.escape(h["og_title"]),
         "{{og_desc}}": html.escape(h["og_desc"]),
+        "{{og_alt}}": html.escape(h["og_alt"]),
         "{{og_locale}}": "en_GB" if lang == "en" else "nb_NO",
         "{{url}}": url,
         "{{en_pressed}}": "true" if lang == "en" else "false",
@@ -139,12 +146,12 @@ for lang in ("en", "no"):
 
 # Legal pages for the publishing tool (/privacy/ and /terms/), text from legal.json, same look as the main page.
 LEGAL_CSS = ('@font-face{font-family:"Instrument Serif";src:url("/fonts/InstrumentSerif-normal-400.woff2") format("woff2");font-display:swap}'
-             ':root{--paper:#f5f4f0;--ink:#161618;--ink-3:#74727a;--accent:#2e5a46}'
+             ':root{--paper:#f5f4f0;--ink:#161618;--ink-3:#66646c;--accent:#2e5a46}'
              '@media (prefers-color-scheme:dark){:root{--paper:#141416;--ink:#ecebe7;--ink-3:#a19fa8;--accent:#8fc2a8}}'
              'body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.6}'
              'main{max-width:680px;margin:0 auto;padding:40px 16px 64px}'
              'h1{font-family:"Instrument Serif",Georgia,serif;font-weight:400;font-size:clamp(30px,6vw,44px);line-height:1.1;margin:28px 0 6px}'
-             '.upd{color:var(--ink-3);margin:0 0 28px}a{color:var(--accent);overflow-wrap:anywhere}.home{text-decoration:none;font-family:"Instrument Serif",Georgia,serif;font-size:22px;color:var(--ink)}')
+             '.upd{color:var(--ink-3);margin:0 0 28px}.nb{color:var(--ink-3);font-size:15px;margin:0 0 20px}a{color:var(--accent);overflow-wrap:anywhere}.home{text-decoration:none;font-family:"Instrument Serif",Georgia,serif;font-size:22px;color:var(--ink)}')
 legal = json.loads((SRC / "legal.json").read_text(encoding="utf-8"))
 
 
@@ -157,12 +164,21 @@ def linkify(text):
 
 for slug, d in legal.items():
     body = "\n".join("<p>%s</p>" % linkify(p) for p in d["paras"])
+    url = "%s/%s/" % (SITE, slug)
+    title, desc = html.escape(d["title"]), html.escape(d["description"])
+    meta = ('<meta name="description" content="%s">'
+            '<meta property="og:title" content="%s"><meta property="og:description" content="%s">'
+            '<meta property="og:url" content="%s"><meta property="og:type" content="website">'
+            '<meta property="og:site_name" content="Rivan Studio"><meta property="og:locale" content="en_GB">'
+            '<meta property="og:image" content="%s/media/share.png"><meta name="twitter:card" content="summary_large_image">'
+            '<link rel="alternate" hreflang="en" href="%s"><link rel="alternate" hreflang="x-default" href="%s">'
+            % (desc, title, desc, url, SITE, url, url))
     page = ('<!doctype html>\n<html lang="en"><head><meta charset="utf-8">'
             '<meta name="viewport" content="width=device-width,initial-scale=1">'
-            '<title>%s</title><link rel="canonical" href="%s/%s/"><link rel="icon" href="/favicon.png" type="image/png">'
+            '<title>%s</title>%s<link rel="canonical" href="%s"><link rel="icon" href="/favicon.png" type="image/png">'
             '<style>%s</style></head><body><main><a class="home" href="/">Rivan Studio</a>'
-            '<h1>%s</h1><p class="upd">%s</p>\n%s\n</main></body></html>\n'
-            % (html.escape(d["title"]), SITE, slug, LEGAL_CSS, html.escape(d["title"]), html.escape(d["updated"]), body))
+            '<h1>%s</h1><p class="upd">%s</p><p class="nb" lang="nb">%s</p>\n%s\n</main></body></html>\n'
+            % (title, meta, url, LEGAL_CSS, title, html.escape(d["updated"]), linkify(d["nb_notice"]), body))
     dest = OUT / slug / "index.html"
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(page, encoding="utf-8")

@@ -1,19 +1,22 @@
 {
   "privacy": {
     "title": "Rivan Studio: Privacy Policy",
-    "updated": "Last updated: 2 October 2026",
+    "updated": "Last updated: 3 October 2026",
     "paras": [
       "Who we are: Rivan Studio is a sole proprietorship (ENK) run by Aksel Jakobsen Rivan, org. no. 937 616 716, Leitevegen 16A, 5357 Fjell, Norway. Contact: partnerships@rivanstudio.com.",
       "Businesses we contact: we use business contact details that companies publish themselves, such as contact forms and general addresses like post@ or info@ on their websites. We use them to send one short offer about our video service and at most one follow-up. Legal basis: our legitimate interest in offering our service to businesses (GDPR art. 6(1)(f)). We do not write to named personal addresses without consent. Reply \"no\" and we stop; we keep only a note that you said no, so we never contact you again.",
       "Clients: when you order a video we process your name, work email, company details and the product photos and texts you send us. Legal basis: our agreement with you (GDPR art. 6(1)(b)). Invoices and their records are kept for 5 years because Norwegian bookkeeping law requires it (GDPR art. 6(1)(c)).",
       "Tools we use: email runs on Google Workspace, and invoices are made in Fiken. Product photos and texts for a video go through third-party AI services (currently Higgsfield and ElevenLabs), some of which process data outside the EEA under their own safeguards. Unreleased products stay on our own computer and are made with local tools only. We do not sell your data or share it for anyone else's marketing.",
+      "This website: rivanstudio.com sets no cookies and uses no analytics, forms or third-party fonts. It is hosted on GitHub Pages, which processes technical data such as IP addresses to deliver the page (GitHub's privacy statement: https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). If you email us, we use your message and address only to reply.",
       "How long we keep data: prospect details for up to 12 months after our last message, or until you say no (then only the note that you said no). Client project files for 12 months after delivery, unless you ask us to delete them sooner. Invoices for 5 years.",
       "Your rights: you can ask for access, correction, deletion, restriction or a copy of your data, and you can object at any time to being contacted. Write to partnerships@rivanstudio.com. You can also complain to the Norwegian Data Protection Authority, Datatilsynet (https://www.datatilsynet.no).",
       "Rivan Studio Publisher (our internal posting tool): it uploads videos that Rivan Studio has made to social media accounts that Rivan Studio owns. When an account owner signs in, the platform (Instagram, TikTok or YouTube) gives the tool an access token and basic account information (account ID, username). The tool uses these only to upload videos and read back the published post (link, caption, duration, view counts).",
       "Access tokens are kept in the operating system's encrypted credential store on our own computer. Post IDs and links are kept in our production records. We do not collect data about other users, followers or viewers.",
       "Deleting data: you can revoke access at any time in the platform's settings (Instagram: Settings > Website permissions; TikTok: Settings > Security > Manage app permissions; Google: myaccount.google.com/permissions). To have us delete stored tokens and records, email admin@rivanstudio.com; we delete them within 30 days.",
       "YouTube: the tool uses YouTube API Services. By using it you agree to the YouTube Terms of Service (https://www.youtube.com/t/terms). Google's privacy policy: https://policies.google.com/privacy."
-    ]
+    ],
+    "description": "How Rivan Studio handles personal data: businesses we contact, clients, this website and our internal publishing tool.",
+    "nb_notice": "Denne siden finnes bare på engelsk. Spørsmål på norsk? Skriv til partnerships@rivanstudio.com."
   },
   "terms": {
     "title": "Rivan Studio: Terms of Service",
@@ -33,6 +36,8 @@
       "9. Liability: we fix or redo a video that doesn't match the approved first frame. Our total liability is limited to the price you paid for that video.",
       "10. Law: Norwegian law applies, and disputes go to Bergen District Court (Bergen tingrett).",
       "Rivan Studio Publisher: our internal publishing tool is used only by Rivan Studio to post its own videos to accounts it owns, and is not offered to the public. Its use follows the terms of each platform it connects to (Instagram, TikTok, YouTube). All videos posted are marked as AI-generated where the platform supports it. The tool is provided as is."
-    ]
+    ],
+    "description": "Terms for Rivan Studio's AI brand-video service: what you get, use rights, price and payment, and Norwegian law.",
+    "nb_notice": "Denne siden finnes bare på engelsk. Spørsmål på norsk? Skriv til partnerships@rivanstudio.com."
   }
 }
