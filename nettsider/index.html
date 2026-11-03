@@ -16,10 +16,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231F6B4F'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='17' fill='%23fff' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Rivan Studio","description":"Nettsider for små bedrifter","url":"https://rivanstudio.com/nettsider/","email":"aksel@rivanstudio.com","founder":{"@type":"Person","name":"Aksel Jakobsen"},"areaServed":"NO","priceRange":"4900–9900 NOK"}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+/* Fonter ligger på egen server: raskere første visning, ingen kall til Google */
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:500 800;font-display:swap;src:url(fonts/bricolage-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Bricolage Grotesque";font-style:normal;font-weight:500 800;font-display:swap;src:url(fonts/bricolage-latinext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Inter";font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/inter-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter";font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/inter-latinext.woff2) format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
 :root{
   --ground:#F3EFE6; --paper:#FBF9F4; --ink:#14181F; --muted:#5B6270; --line:#DDD7CA;
   --new:#1F6B4F; --new-soft:#DCEBE3;      /* grønn = nytt / ferdig */
@@ -47,6 +51,9 @@ a{color:inherit}
 
 /* ---------- hero ---------- */
 .hero{padding:clamp(28px,6vw,72px) 0 clamp(24px,4vw,40px)}
+.hello{display:inline-flex;align-items:center;gap:10px;margin:0 0 22px;padding:8px 16px 8px 12px;border-radius:20px;line-height:1.35;background:var(--new-soft);color:var(--new);font-weight:600;font-size:16px}
+.hello::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--new);box-shadow:0 0 0 4px rgba(31,107,79,.18)}
+.hello[hidden]{display:none}
 .hero h1{font-family:var(--display);font-weight:800;letter-spacing:-.045em;line-height:.92;margin:0;font-size:clamp(54px,11.5vw,156px)}
 .hero h1 .strike{position:relative;color:var(--muted);white-space:nowrap}
 .hero h1 .strike::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.09em;background:var(--old);transform-origin:left;transform:scaleX(0);animation:strike 0.9s .5s var(--ease) forwards}
@@ -110,7 +117,7 @@ a{color:inherit}
 .old .o-side b{color:#1E4580}
 .old .o-main h2{font-size:30px;color:#C00000;margin:0 0 6px;font-style:italic}
 .old .o-main p{font:12px Verdana,sans-serif;margin:0 0 10px;line-height:1.5}
-.old .o-img{height:190px;background:#DDD;border:1px dashed #999;display:grid;place-items:center;font:12px Verdana,sans-serif;color:#888;margin:10px 0}
+.old .o-img{display:block;width:253px;height:190px;border:3px ridge #999;margin:10px 0;image-rendering:auto}
 .old .o-marq{font:bold 12px Verdana,sans-serif;color:#fff;background:#C00000;padding:4px 8px;white-space:nowrap;overflow:hidden}
 .old .o-foot{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:860px;text-align:center;font:10px Verdana,sans-serif;color:#555;padding:10px;border-top:1px solid #CCC;background:#fff}
 .old .o-counter{display:inline-block;font:bold 11px "Courier New",monospace;background:#000;color:#3F3;padding:1px 4px;margin-left:6px}
@@ -161,13 +168,16 @@ h2{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height
 .example li{display:flex;gap:10px;align-items:flex-start;color:var(--muted)}
 .example li::before{content:"";flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--new)}
 .textlink{font-weight:600;text-decoration:none;border-bottom:2px solid var(--new);padding-bottom:2px}
-.fc{display:block;text-decoration:none;border-radius:20px;overflow:hidden;aspect-ratio:4/3;position:relative;background:#24324F;color:#fff;box-shadow:0 40px 80px -40px rgba(20,24,31,.5);transition:transform .35s var(--ease)}
-.fc:hover{transform:translateY(-4px) rotate(-.4deg)}
-.fc .sun{position:absolute;width:180px;height:180px;border-radius:50%;background:#E2A93B;right:12%;top:14%}
-.fc .mtn{position:absolute;left:-10%;right:-10%;bottom:0;height:62%;background:#3C7DB8;clip-path:polygon(0 100%,0 55%,22% 20%,40% 50%,58% 8%,78% 46%,100% 30%,100% 100%)}
-.fc .wave{position:absolute;left:0;right:0;bottom:0;height:24%;background:#1B2740}
-.fc .name{position:absolute;left:28px;bottom:26px;font-family:var(--display);font-weight:800;font-size:32px;letter-spacing:.04em}
-.fc .name small{display:block;font-family:var(--text);font-weight:500;font-size:14px;letter-spacing:0;opacity:.8}
+.fc{display:block;position:relative;text-decoration:none;padding:0 8% 9% 0}
+.fc .desk{display:block;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 40px 80px -40px rgba(20,24,31,.55),0 0 0 1px rgba(20,24,31,.08);transition:transform .4s var(--ease)}
+.fc .desk .bar{display:flex;align-items:center;gap:6px;padding:10px 14px;background:#ECE8DF;border-bottom:1px solid var(--line)}
+.fc .desk .bar i{width:10px;height:10px;border-radius:50%;background:#CFC8BA}
+.fc .desk .bar span{margin-left:10px;font-size:12px;color:var(--muted);background:#fff;border-radius:6px;padding:2px 10px}
+.fc img{display:block;width:100%;height:auto}
+.fc .phone{position:absolute;right:0;bottom:0;width:26%;border-radius:22px;overflow:hidden;border:6px solid #14181F;background:#14181F;box-shadow:0 30px 60px -24px rgba(20,24,31,.6);transition:transform .4s var(--ease)}
+.fc .phone img{border-radius:15px;aspect-ratio:9/17;object-fit:cover;object-position:top}
+.fc:hover .desk{transform:translateY(-4px)}
+.fc:hover .phone{transform:translateY(-10px) rotate(1.5deg)}
 
 .prices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .price{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:30px;display:flex;flex-direction:column}
@@ -246,6 +256,7 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:14px;display:flex;justif
   </header>
 
   <div class="hero">
+    <p class="hello" id="hello" hidden></p>
     <h1><span class="strike">Gammel nettside?</span><br>Vi pusser <span class="fresh">opp.</span></h1>
     <div class="hero-row">
       <p class="lead">Rivan Studio gjør utdaterte bedriftssider om til raske, moderne sider som virker på mobil og gir flere henvendelser. Du ser et gratis utkast av den nye forsiden før du bestemmer deg.</p>
@@ -288,7 +299,7 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:14px;display:flex;justif
                 <div class="o-main">
                   <h2>Velkommen til vår hjemmeside!!</h2>
                   <p>Hansen Rør &amp; Bad AS har lang erfaring med alt innen rørleggerarbeid, bad og varme. Vi tar oppdrag for både private og bedrifter i hele distriktet. Ta gjerne kontakt for en uforpliktende prat.</p>
-                  <div class="o-img">[ bilde.jpg – 640x480 ]</div>
+                  <img class="o-img" src="img/hansen-gammel.jpg" alt="" width="253" height="190" loading="lazy">
                   <p>Klikk <u style="color:#00E">HER</u> for å se flere bilder av våre jobber. Siden er best vist i Internet Explorer 8 med oppløsning 1024x768.</p>
                 </div>
               </div>
@@ -371,8 +382,9 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:14px;display:flex;justif
         <a class="textlink rise" href="https://fjordandcrayon.com" target="_blank" rel="noopener">Besøk fjordandcrayon.com ↗</a>
       </div>
       <a class="fc rise" href="https://fjordandcrayon.com" target="_blank" rel="noopener" aria-label="Åpne fjordandcrayon.com">
-        <div class="sun"></div><div class="mtn"></div><div class="wave"></div>
-        <div class="name">FJORD &amp; CRAYON<small>fjordandcrayon.com</small></div>
+        <span class="desk"><span class="bar"><i></i><i></i><i></i><span>fjordandcrayon.com</span></span>
+          <img src="img/fc-desktop.webp" srcset="img/fc-desktop-800.webp 800w, img/fc-desktop.webp 1600w" sizes="(max-width:900px) 92vw, 600px" width="1600" height="1000" loading="lazy" decoding="async" alt="Forsiden til fjordandcrayon.com på PC: «Rolige stunder med fargestifter og papir», med fargeleggingsark og knapp til nettbutikken."></span>
+        <span class="phone"><img src="img/fc-mobil.webp" width="360" height="779" loading="lazy" decoding="async" alt="Den samme siden på mobil."></span>
       </a>
     </div>
   </section>
@@ -414,6 +426,19 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:14px;display:flex;justif
 </div>
 
 <script>
+/* Personlig hilsen: rivanstudio.com/nettsider/?firma=Eker%20Bygg */
+(() => {
+  const raw = new URLSearchParams(location.search).get('firma');
+  if (!raw) return;
+  const firma = raw.replace(/[\u0000-\u001F<>]/g, '').replace(/\s+/g, ' ').trim().slice(0, 60);
+  if (!firma) return;
+  const el = document.getElementById('hello');
+  el.textContent = `Hei, ${firma}! Denne siden er laget for dere.`;
+  el.hidden = false;
+  document.title = `${firma}: ny nettside fra Rivan Studio`;
+  const subj = encodeURIComponent(`Gratis utkast til ${firma}`);
+  document.querySelectorAll('a[href^="mailto:aksel@rivanstudio.com?subject="]').forEach(a => { a.href = `mailto:aksel@rivanstudio.com?subject=${subj}`; });
+})();
 (() => {
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const reno = document.getElementById('reno');
