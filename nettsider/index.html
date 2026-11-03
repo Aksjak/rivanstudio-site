@@ -138,12 +138,24 @@ a{color:inherit}
 .new .n-btn.a{background:#1F6B4F;color:#fff}
 .new .n-btn.b{border:1.5px solid #13201A}
 .new .n-visual{position:relative;height:430px;border-radius:26px;overflow:hidden;background:linear-gradient(160deg,#BFD9CC,#7FB29A 55%,#2F7A5C)}
+.new .n-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
 .new .n-visual .tile{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.35) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(255,255,255,.35) 1.5px,transparent 1.5px);background-size:62px 62px;transform:perspective(600px) rotateX(52deg) translateY(120px) scale(1.6);transform-origin:bottom}
 .new .n-visual .drop{position:absolute;left:50%;top:38%;width:120px;height:150px;transform:translate(-50%,-50%);background:radial-gradient(circle at 35% 40%,#fff,#DDF2FF 30%,#7CC3E8 70%);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;box-shadow:0 30px 60px -20px rgba(0,0,0,.3)}
 .new .n-review{position:absolute;left:20px;bottom:20px;background:#fff;border-radius:16px;padding:14px 18px;font-size:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.35)}
 .new .n-review b{display:block;font-size:22px;font-family:var(--display)}
 .new .n-strip{display:flex;gap:40px;padding:30px 56px;font-size:14px;color:#4A5751}
 .new .n-strip b{display:block;color:#13201A;font-size:15px}
+/* mobil: bildet som stripe over teksten, merkelapper flyttet */
+.canvas.m .new .n-links,.canvas.m .new .n-call{visibility:hidden}
+.canvas.m .new .n-hero{grid-template-columns:1fr;gap:22px;padding:6px 56px 0;width:640px}
+.canvas.m .new .n-visual{order:-1;width:528px;height:150px;border-radius:20px}
+.canvas.m .new .n-visual img{object-position:center 45%}
+.canvas.m .new .n-review{left:12px;bottom:12px;padding:8px 12px;font-size:12px}
+.canvas.m .new .n-review b{font-size:17px;display:inline;margin-right:6px}
+.canvas.m .tag[data-at="0.06"]{left:250px!important;top:40px!important}
+.canvas.m .tag[data-at="0.11"]{left:60px!important;top:712px!important}
+.canvas.m .tag[data-at="0.16"]{left:395px!important;top:568px!important}
+.canvas.m .tag[data-at="0.21"]{left:360px!important;top:712px!important}
 .fict{position:absolute;right:12px;bottom:10px;font-size:11px;color:#6B7570;background:rgba(255,255,255,.85);padding:3px 8px;border-radius:6px;z-index:2}
 
 /* ---------- vanlige seksjoner ---------- */
@@ -321,7 +333,7 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:14px;display:flex;justif
                 <p>Bad, varme og akutte lekkasjer. Fast pris før vi starter, og ryddig når vi går.</p>
                 <div class="n-btns"><div class="n-btn a">Be om tilbud</div><div class="n-btn b">Se prosjekter</div></div>
               </div>
-              <div class="n-visual"><div class="tile"></div><div class="drop"></div>
+              <div class="n-visual"><img src="img/hansen-ny.webp" alt="" width="928" height="800" decoding="async">
                 <div class="n-review"><b>4,9 ★</b>127 omtaler på Google</div>
               </div>
             </div>
@@ -459,6 +471,7 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:14px;display:flex;justif
 
   function fit(){
     const w = screen.clientWidth, h = screen.clientHeight;
+    canvas.classList.toggle('m', w < 600);
     if (w < 600) { const s = h / 750; canvas.style.transform = `translateX(${-40 * s}px) scale(${s})`; }
     else canvas.style.transform = `scale(${w / 1200})`;
   }
