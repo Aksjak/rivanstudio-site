@@ -445,7 +445,7 @@ footer{padding:40px 0 56px;color:var(--muted);font-size:14px;display:flex;justif
   const firma = raw.replace(/[\u0000-\u001F<>]/g, '').replace(/\s+/g, ' ').trim().slice(0, 60);
   if (!firma) return;
   const el = document.getElementById('hello');
-  el.textContent = `Hei, ${firma}! Denne siden er laget for dere.`;
+  el.textContent = `Hei, ${firma}! Slik kan nettsiden deres bli.`;
   el.hidden = false;
   document.title = `${firma}: ny nettside fra Rivan Studio`;
   const subj = encodeURIComponent(`Gratis utkast til ${firma}`);
