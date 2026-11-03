@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rivan Studio – vi pusser opp nettsiden din</title>
+<meta name="description" content="Rivan Studio pusser opp gamle nettsider for små bedrifter. Se et gratis utkast av den nye forsiden før du bestemmer deg.">
+<link rel="canonical" href="https://rivanstudio.com/nettsider/">
+<meta name="theme-color" content="#F3EFE6">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="nb_NO">
+<meta property="og:title" content="Gammel nettside? Vi pusser opp. – Rivan Studio">
+<meta property="og:description" content="Moderne nettsider for små bedrifter. Gratis utkast av forsiden før du bestemmer deg.">
+<meta property="og:url" content="https://rivanstudio.com/nettsider/">
+<meta property="og:image" content="https://rivanstudio.com/nettsider/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231F6B4F'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='17' fill='%23fff' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Rivan Studio","description":"Nettsider for små bedrifter","url":"https://rivanstudio.com/nettsider/","email":"aksel@rivanstudio.com","founder":{"@type":"Person","name":"Aksel Jakobsen"},"areaServed":"NO","priceRange":"4900–9900 NOK"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#F3EFE6; --paper:#FBF9F4; --ink:#14181F; --muted:#5B6270; --line:#DDD7CA;
+  --new:#1F6B4F; --new-soft:#DCEBE3;      /* grønn = nytt / ferdig */
+  --old:#D98A1E; --old-soft:#F6E3C4;      /* rav = gammelt / problem */
+  --display:"Bricolage Grotesque", "Inter", system-ui, sans-serif;
+  --text:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--text);font-size:17px;line-height:1.6}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--new);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-9999px;top:8px;background:var(--ink);color:#fff;padding:10px 14px;border-radius:8px;z-index:10}
+.skip:focus{left:8px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--new)}
+
+/* ---------- toppmeny ---------- */
+.top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+.logo{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.02em;text-decoration:none}
+.logo i{font-style:normal;color:var(--new)}
+.pill{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;text-decoration:none;padding:10px 18px;border-radius:999px;border:1.5px solid var(--ink);transition:background .2s,color .2s}
+.pill:hover{background:var(--ink);color:var(--paper)}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(28px,6vw,72px) 0 clamp(24px,4vw,40px)}
+.hero h1{font-family:var(--display);font-weight:800;letter-spacing:-.045em;line-height:.92;margin:0;font-size:clamp(54px,11.5vw,156px)}
+.hero h1 .strike{position:relative;color:var(--muted);white-space:nowrap}
+.hero h1 .strike::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.09em;background:var(--old);transform-origin:left;transform:scaleX(0);animation:strike 0.9s .5s var(--ease) forwards}
+.hero h1 .fresh{color:var(--new)}
+@keyframes strike{to{transform:scaleX(1)}}
+.hero-row{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-top:clamp(24px,4vw,44px)}
+.hero p.lead{font-size:clamp(18px,2vw,21px);color:var(--muted);margin:0;max-width:44ch}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--new);color:#fff;text-decoration:none;font-weight:600;padding:16px 26px;border-radius:999px;transition:transform .2s var(--ease),box-shadow .2s}
+.cta:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(31,107,79,.6)}
+.cta svg{transition:transform .2s var(--ease)}
+.cta:hover svg{transform:translateX(3px)}
+.hero .actions{display:flex;flex-direction:column;align-items:flex-start;gap:10px;justify-self:end}
+.hero .actions small{color:var(--muted);font-size:14px}
+.scrollhint{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:14px;margin-top:28px}
+.scrollhint span{display:block;width:1.5px;height:34px;background:linear-gradient(var(--ink),transparent);animation:hint 1.8s ease-in-out infinite}
+@keyframes hint{0%,100%{transform:translateY(-4px);opacity:.4}50%{transform:translateY(4px);opacity:1}}
+
+/* ---------- oppussingen (sticky) ---------- */
+.reno{position:relative;height:420vh}
+.stage{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:220px 1fr;gap:32px;align-items:center;max-width:1240px;margin:0 auto;padding:0 24px}
+.phases{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.phases li{display:flex;align-items:center;gap:12px;font-family:var(--display);font-weight:700;font-size:20px;color:#B3AC9E;transition:color .3s}
+.phases li b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;border:1.5px solid currentColor;font-size:13px;font-family:var(--text)}
+.phases li.on{color:var(--ink)}
+.phases li.done{color:var(--new)}
+.phases li.done b{background:var(--new);border-color:var(--new);color:#fff}
+.phases p{font-family:var(--text);font-size:15px;color:var(--muted);margin:22px 0 0;max-width:24ch}
+
+.frame{position:relative;border-radius:14px;background:#E6E1D6;box-shadow:0 1px 0 rgba(0,0,0,.04),0 40px 80px -40px rgba(20,24,31,.45);overflow:visible}
+.frame .bar{display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border-bottom:1px solid #D2CBBD;border-radius:14px 14px 0 0;background:#EAE5DA}
+.frame .bar i{width:11px;height:11px;border-radius:50%;background:#CFC7B7}
+.frame .bar .url{margin-left:12px;flex:1;max-width:340px;height:22px;border-radius:6px;background:#F7F4EE;font-size:12px;color:var(--muted);display:flex;align-items:center;padding:0 10px}
+.screen{position:relative;overflow:hidden;border-radius:0 0 14px 14px;aspect-ratio:16/10}
+.canvas{position:absolute;left:0;top:0;width:1200px;height:750px;transform-origin:0 0}
+.layer{position:absolute;inset:0}
+.layer.new{clip-path:inset(0 0 100% 0)}
+.roller{position:absolute;left:-10px;right:-10px;height:4px;top:0;background:var(--new);border-radius:4px;opacity:0;box-shadow:0 0 0 6px rgba(31,107,79,.12)}
+.roller::after{content:"";position:absolute;right:18px;top:-11px;width:26px;height:26px;border-radius:50%;background:var(--new);box-shadow:0 0 0 5px var(--paper)}
+
+.tag{position:absolute;display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;padding:7px 12px 7px 9px;border-radius:999px;white-space:nowrap;
+  background:var(--old-soft);color:#7A4A0A;border:1.5px solid var(--old);opacity:0;transform:translateY(8px) scale(.96);transition:opacity .35s var(--ease),transform .35s var(--ease),background .3s,border-color .3s,color .3s;z-index:3}
+.tag .dot{width:16px;height:16px;border-radius:50%;background:var(--old);color:#fff;display:grid;place-items:center;font-size:11px;line-height:1}
+.tag.show{opacity:1;transform:none}
+.tag.fixed{background:var(--new-soft);border-color:var(--new);color:#124532}
+.tag.fixed .dot{background:var(--new)}
+.tag .t-new{display:none}
+.tag.fixed .t-old{display:none}
+.tag.fixed .t-new{display:inline}
+
+/* ---------- den gamle siden (2012) ---------- */
+.old{background:#C9CCD1 repeating-linear-gradient(45deg,#C9CCD1 0 6px,#C3C6CC 6px 12px);font-family:"Times New Roman",Times,serif;color:#222}
+.old .o-page{width:860px;margin:0 auto;background:#fff;height:100%;border-left:1px solid #999;border-right:1px solid #999}
+.old .o-head{height:110px;background:linear-gradient(#3D6FB6,#1E4580);display:flex;align-items:center;padding:0 24px;gap:18px;border-bottom:4px solid #F2C200}
+.old .o-logo{width:72px;height:72px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#9ED0FF,#2A5DA8);border:3px solid #fff}
+.old .o-title{font-size:38px;font-weight:bold;color:#fff;text-shadow:2px 2px 0 #0A2246;letter-spacing:1px}
+.old .o-title small{display:block;font-size:15px;font-style:italic;font-weight:normal;color:#FFE680;text-shadow:none}
+.old .o-nav{display:flex;gap:4px;padding:6px;background:#E4E4E4;border-bottom:1px solid #999}
+.old .o-nav span{font:12px Verdana,sans-serif;padding:4px 14px;background:linear-gradient(#fff,#CFCFCF);border:1px solid #888;border-radius:3px}
+.old .o-body{display:grid;grid-template-columns:200px 1fr;gap:18px;padding:18px}
+.old .o-side{font:11px Verdana,sans-serif;background:#F4F4F4;border:1px solid #BBB;padding:10px;line-height:1.7}
+.old .o-side b{color:#1E4580}
+.old .o-main h2{font-size:30px;color:#C00000;margin:0 0 6px;font-style:italic}
+.old .o-main p{font:12px Verdana,sans-serif;margin:0 0 10px;line-height:1.5}
+.old .o-img{height:190px;background:#DDD;border:1px dashed #999;display:grid;place-items:center;font:12px Verdana,sans-serif;color:#888;margin:10px 0}
+.old .o-marq{font:bold 12px Verdana,sans-serif;color:#fff;background:#C00000;padding:4px 8px;white-space:nowrap;overflow:hidden}
+.old .o-foot{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:860px;text-align:center;font:10px Verdana,sans-serif;color:#555;padding:10px;border-top:1px solid #CCC;background:#fff}
+.old .o-counter{display:inline-block;font:bold 11px "Courier New",monospace;background:#000;color:#3F3;padding:1px 4px;margin-left:6px}
+
+/* ---------- den nye siden ---------- */
+.new{background:#FBFAF6;font-family:var(--text);color:#13201A}
+.new .n-nav{display:flex;align-items:center;justify-content:space-between;padding:26px 56px}
+.new .n-logo{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:-.02em}
+.new .n-logo span{color:#1F6B4F}
+.new .n-links{display:flex;gap:30px;font-size:15px;color:#4A5751}
+.new .n-call{background:#13201A;color:#fff;padding:11px 20px;border-radius:999px;font-size:15px;font-weight:600}
+.new .n-hero{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;padding:34px 56px 0}
+.new .n-hero h3{font-family:var(--display);font-weight:800;font-size:64px;line-height:.98;letter-spacing:-.04em;margin:18px 0 18px}
+.new .n-hero p{font-size:18px;color:#4A5751;margin:0 0 26px;max-width:30ch}
+.new .n-badge{display:inline-flex;gap:8px;align-items:center;font-size:14px;font-weight:600;background:#E3EFE8;color:#1F6B4F;padding:7px 13px;border-radius:999px}
+.new .n-btns{display:flex;gap:12px}
+.new .n-btn{padding:15px 24px;border-radius:999px;font-weight:600;font-size:16px}
+.new .n-btn.a{background:#1F6B4F;color:#fff}
+.new .n-btn.b{border:1.5px solid #13201A}
+.new .n-visual{position:relative;height:430px;border-radius:26px;overflow:hidden;background:linear-gradient(160deg,#BFD9CC,#7FB29A 55%,#2F7A5C)}
+.new .n-visual .tile{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.35) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(255,255,255,.35) 1.5px,transparent 1.5px);background-size:62px 62px;transform:perspective(600px) rotateX(52deg) translateY(120px) scale(1.6);transform-origin:bottom}
+.new .n-visual .drop{position:absolute;left:50%;top:38%;width:120px;height:150px;transform:translate(-50%,-50%);background:radial-gradient(circle at 35% 40%,#fff,#DDF2FF 30%,#7CC3E8 70%);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;box-shadow:0 30px 60px -20px rgba(0,0,0,.3)}
+.new .n-review{position:absolute;left:20px;bottom:20px;background:#fff;border-radius:16px;padding:14px 18px;font-size:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.35)}
+.new .n-review b{display:block;font-size:22px;font-family:var(--display)}
+.new .n-strip{display:flex;gap:40px;padding:30px 56px;font-size:14px;color:#4A5751}
+.new .n-strip b{display:block;color:#13201A;font-size:15px}
+.fict{position:absolute;right:12px;bottom:10px;font-size:11px;color:#6B7570;background:rgba(255,255,255,.85);padding:3px 8px;border-radius:6px;z-index:2}
+
+/* ---------- vanlige seksjoner ---------- */
+section.block{padding:clamp(64px,9vw,120px) 0;border-top:1px solid var(--line)}
+h2{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height:1;font-size:clamp(36px,5.6vw,72px);margin:12px 0 18px}
+.sub{color:var(--muted);max-width:52ch;margin:0 0 44px;font-size:18px}
+.grid4{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .25s var(--ease),border-color .25s}
+.card:hover{transform:translateY(-3px);border-color:#C9C1B1}
+.card .ic{width:40px;height:40px;border-radius:12px;background:var(--new-soft);color:var(--new);display:grid;place-items:center;margin-bottom:18px}
+.card h3{font-family:var(--display);font-size:22px;letter-spacing:-.02em;margin:0 0 6px;line-height:1.15}
+.card p{margin:0;color:var(--muted);font-size:16px}
+
+.steps{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--ink)}
+.steps li{display:grid;grid-template-columns:90px 1fr 1.2fr;gap:24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line)}
+.steps .n{font-family:var(--display);font-weight:800;font-size:40px;color:var(--new);letter-spacing:-.04em}
+.steps h3{font-family:var(--display);font-size:clamp(24px,2.8vw,34px);letter-spacing:-.03em;margin:0;line-height:1.1}
+.steps p{margin:0;color:var(--muted)}
+
+.example{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
+.example ul{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:10px}
+.example li{display:flex;gap:10px;align-items:flex-start;color:var(--muted)}
+.example li::before{content:"";flex:none;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--new)}
+.textlink{font-weight:600;text-decoration:none;border-bottom:2px solid var(--new);padding-bottom:2px}
+.fc{display:block;text-decoration:none;border-radius:20px;overflow:hidden;aspect-ratio:4/3;position:relative;background:#24324F;color:#fff;box-shadow:0 40px 80px -40px rgba(20,24,31,.5);transition:transform .35s var(--ease)}
+.fc:hover{transform:translateY(-4px) rotate(-.4deg)}
+.fc .sun{position:absolute;width:180px;height:180px;border-radius:50%;background:#E2A93B;right:12%;top:14%}
+.fc .mtn{position:absolute;left:-10%;right:-10%;bottom:0;height:62%;background:#3C7DB8;clip-path:polygon(0 100%,0 55%,22% 20%,40% 50%,58% 8%,78% 46%,100% 30%,100% 100%)}
+.fc .wave{position:absolute;left:0;right:0;bottom:0;height:24%;background:#1B2740}
+.fc .name{position:absolute;left:28px;bottom:26px;font-family:var(--display);font-weight:800;font-size:32px;letter-spacing:.04em}
+.fc .name small{display:block;font-family:var(--text);font-weight:500;font-size:14px;letter-spacing:0;opacity:.8}
+
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.price{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:30px;display:flex;flex-direction:column}
+.price.feature{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.price.feature p,.price.feature li{color:#C9CCD3}
+.price h3{font-family:var(--display);font-size:22px;margin:0}
+.price .amt{font-family:var(--display);font-weight:800;font-size:46px;letter-spacing:-.04em;margin:14px 0 4px;line-height:1}
+.price p{margin:0 0 18px;color:var(--muted);font-size:15px}
+.price ul{margin:0;padding-left:18px;color:var(--muted);font-size:16px;display:grid;gap:6px}
+
+.faq details{border-bottom:1px solid var(--line);padding:22px 0}
+.faq details:first-of-type{border-top:1.5px solid var(--ink)}
+.faq summary{list-style:none;cursor:pointer;font-family:var(--display);font-weight:700;font-size:clamp(20px,2.2vw,26px);letter-spacing:-.02em;display:flex;justify-content:space-between;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--new);font-weight:500;transition:transform .25s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--muted);margin:12px 0 0;max-width:62ch}
+
+.final{background:var(--ink);color:var(--paper);border-radius:28px;padding:clamp(40px,7vw,96px);text-align:left;position:relative;overflow:hidden}
+.final h2{color:var(--paper);max-width:14ch}
+.final p{color:#C9CCD3;max-width:46ch;font-size:18px;margin:0 0 32px}
+.final .cta{background:var(--paper);color:var(--ink)}
+.final .stripe{position:absolute;right:-60px;top:-60px;width:320px;height:320px;border-radius:50%;border:40px solid var(--new);opacity:.9}
+
+footer{padding:40px 0 56px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* ---------- inn-animasjoner ---------- */
+.rise{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rise.in{opacity:1;transform:none}
+
+/* ---------- mobil ---------- */
+@media (max-width:900px){
+  .hero-row{grid-template-columns:1fr;gap:24px}
+  .hero .actions{justify-self:start}
+  .stage{grid-template-columns:1fr;grid-template-rows:auto auto;align-content:center;gap:18px;padding:0 16px}
+  .phases{grid-auto-flow:column;justify-content:space-between}
+  .phases li{font-size:14px;gap:6px}
+  .phases li b{width:22px;height:22px;font-size:11px}
+  .phases li{font-size:13px}
+  .screen{aspect-ratio:4/5}
+  .fict{top:10px;bottom:auto}
+  .phases p{display:none}
+  .tag{font-size:11px;padding:5px 9px 5px 7px}
+  .grid4{grid-template-columns:1fr 1fr}
+  .steps li{grid-template-columns:56px 1fr;gap:6px 14px}
+  .steps li p{grid-column:2}
+  .steps .n{font-size:30px}
+  .example{grid-template-columns:1fr;gap:28px}
+  .prices{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .wrap{padding:0 16px}
+  .grid4{grid-template-columns:1fr}
+  .pill{display:none}
+  .hero h1{font-size:10.6vw}
+  .frame .bar .url{display:none}
+}
+
+/* ---------- redusert bevegelse ---------- */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .hero h1 .strike::after{transform:scaleX(1)}
+  .rise{opacity:1;transform:none}
+  .reno{height:auto}
+  .stage{position:relative;height:auto;padding-top:40px;padding-bottom:40px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#innhold">Hopp til innhold</a>
+
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#">Rivan <i>Studio</i></a>
+    <a class="pill" href="#kontakt">Få gratis utkast</a>
+  </header>
+
+  <div class="hero">
+    <h1><span class="strike">Gammel nettside?</span><br>Vi pusser <span class="fresh">opp.</span></h1>
+    <div class="hero-row">
+      <p class="lead">Rivan Studio gjør utdaterte bedriftssider om til raske, moderne sider som virker på mobil og gir flere henvendelser. Du ser et gratis utkast av den nye forsiden før du bestemmer deg.</p>
+      <div class="actions">
+        <a class="cta" href="#kontakt">Be om gratis utkast
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <small>Uforpliktende. Ferdig side på under en uke.</small>
+      </div>
+    </div>
+    <div class="scrollhint"><span></span>Scroll og se oppussingen</div>
+  </div>
+</div>
+
+<!-- Oppussingen: gammel side blir ny mens du scroller -->
+<main id="innhold">
+<div class="reno" id="reno">
+  <div class="stage">
+    <div>
+      <ol class="phases" id="phases">
+        <li data-i="0"><b>1</b>Befaring</li>
+        <li data-i="1"><b>2</b>Riving</li>
+        <li data-i="2"><b>3</b>Maling</li>
+        <li data-i="3"><b>4</b>Ferdig</li>
+      </ol>
+      <p id="phase-text">Vi ser på siden dere har i dag og finner det som stopper kundene.</p>
+    </div>
+
+    <div class="frame" role="img" aria-label="Animasjon: en utdatert nettside fra 2012 blir pusset opp til en moderne side. Eksempelet er fiktivt.">
+      <div class="bar"><i></i><i></i><i></i><div class="url">hansen-ror.no</div></div>
+      <div class="screen" id="screen">
+        <div class="canvas" id="canvas">
+          <!-- GAMMEL -->
+          <div class="layer old" id="old">
+            <div class="o-page">
+              <div class="o-head"><div class="o-logo"></div><div class="o-title">HANSEN RØR &amp; BAD AS<small>Din rørlegger siden 1998</small></div></div>
+              <div class="o-nav"><span>Hjem</span><span>Om oss</span><span>Tjenester</span><span>Bilder</span><span>Linker</span><span>Gjestebok</span></div>
+              <div class="o-marq">*** NYHET!!! Vi har nå åpent også på lørdager *** Ring oss for et godt tilbud *** NYHET!!!</div>
+              <div class="o-body">
+                <div class="o-side"><b>Kontakt oss:</b><br>Tlf: 69 00 00 00<br>Fax: 69 00 00 01<br>Epost: hansenror@online.no<br><br><b>Åpningstider:</b><br>Man-fre 07-15<br><br><b>Siste nytt:</b><br>Nye bilder lagt ut 12.03.2013!</div>
+                <div class="o-main">
+                  <h2>Velkommen til vår hjemmeside!!</h2>
+                  <p>Hansen Rør &amp; Bad AS har lang erfaring med alt innen rørleggerarbeid, bad og varme. Vi tar oppdrag for både private og bedrifter i hele distriktet. Ta gjerne kontakt for en uforpliktende prat.</p>
+                  <div class="o-img">[ bilde.jpg – 640x480 ]</div>
+                  <p>Klikk <u style="color:#00E">HER</u> for å se flere bilder av våre jobber. Siden er best vist i Internet Explorer 8 med oppløsning 1024x768.</p>
+                </div>
+              </div>
+              <div class="o-foot">© 2014 Hansen Rør &amp; Bad AS – Alle rettigheter reservert | Du er besøkende nr. <span class="o-counter">004213</span></div>
+            </div>
+          </div>
+
+          <!-- NY -->
+          <div class="layer new" id="new">
+            <div class="n-nav">
+              <div class="n-logo">Hansen <span>Rør</span></div>
+              <div class="n-links"><span>Tjenester</span><span>Prosjekter</span><span>Om oss</span></div>
+              <div class="n-call">Ring 69 00 00 00</div>
+            </div>
+            <div class="n-hero">
+              <div>
+                <div class="n-badge">● Ledig denne uka</div>
+                <h3>Rørlegger du kan stole på.</h3>
+                <p>Bad, varme og akutte lekkasjer. Fast pris før vi starter, og ryddig når vi går.</p>
+                <div class="n-btns"><div class="n-btn a">Be om tilbud</div><div class="n-btn b">Se prosjekter</div></div>
+              </div>
+              <div class="n-visual"><div class="tile"></div><div class="drop"></div>
+                <div class="n-review"><b>4,9 ★</b>127 omtaler på Google</div>
+              </div>
+            </div>
+            <div class="n-strip"><div><b>Svar innen 2 timer</b>på hverdager</div><div><b>Sentralt godkjent</b>våtromsarbeid</div><div><b>Siden 1998</b>i distriktet</div></div>
+          </div>
+
+          <div class="roller" id="roller"></div>
+
+          <!-- Merkelapper: rav = problem, grønn = løst -->
+          <div class="tag" data-at="0.06" style="left:250px;top:92px"><span class="dot">!</span><span class="t-old">Logo og farger fra 2012</span><span class="t-new">Ny, tydelig profil</span></div>
+          <div class="tag" data-at="0.11" style="left:140px;top:540px"><span class="dot">!</span><span class="t-old">Ikke tilpasset mobil</span><span class="t-new">Laget for mobil først</span></div>
+          <div class="tag" data-at="0.16" style="left:370px;top:430px"><span class="dot">!</span><span class="t-old">Ingen «Be om tilbud»-knapp</span><span class="t-new">Tilbud med ett trykk</span></div>
+          <div class="tag" data-at="0.21" style="left:420px;top:690px"><span class="dot">!</span><span class="t-old">© 2014 i bunnen</span><span class="t-new">Oppdatert og rask</span></div>
+        </div>
+        <div class="fict">Fiktivt eksempel</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="block">
+    <div class="eyebrow rise">Dette får du</div>
+    <h2 class="rise">Alt en liten bedrift trenger.<br>Ingenting den ikke trenger.</h2>
+    <p class="sub rise">Dere slipper å lære et nytt verktøy. Jeg bygger, kobler til og passer på at alt virker.</p>
+    <div class="grid4">
+      <div class="card rise"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div><h3>Laget for mobil</h3><p>De fleste kundene finner dere på telefonen. Siden er bygget for små skjermer først.</p></div>
+      <div class="card rise"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div><h3>Enkel kontakt</h3><p>Tydelige knapper for å ringe, sende e-post eller be om tilbud.</p></div>
+      <div class="card rise"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><h3>Synlig i Google</h3><p>Riktige titler og beskrivelser, og hjelp med Google-bedriftsprofilen.</p></div>
+      <div class="card rise"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Rask og trygg</h3><p>Lett side som laster raskt, med sikker tilkobling (https).</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="eyebrow rise">Slik jobber jeg</div>
+    <h2 class="rise">Fra første melding<br>til ferdig side.</h2>
+    <p class="sub rise">Alt skjer over e-post og telefon. Dere trenger ikke sette av tid til møter.</p>
+    <ol class="steps">
+      <li class="rise"><span class="n">01</span><h3>Gratis utkast</h3><p>Jeg lager et utkast av forsiden deres, basert på det dere har i dag.</p></li>
+      <li class="rise"><span class="n">02</span><h3>Dere sier ja eller nei</h3><p>Liker dere det, avtaler vi innhold og fast pris. Hvis ikke, takker vi for nå.</p></li>
+      <li class="rise"><span class="n">03</span><h3>Ferdig på under en uke</h3><p>Dere sender tekst og bilder, jeg bygger resten.</p></li>
+      <li class="rise"><span class="n">04</span><h3>Publisering</h3><p>Jeg kobler siden til domenet deres og sjekker at alt virker.</p></li>
+    </ol>
+  </section>
+
+  <section class="block">
+    <div class="example">
+      <div>
+        <div class="eyebrow rise">Eksempel</div>
+        <h2 class="rise">Fjord &amp; Crayon</h2>
+        <p class="sub rise" style="margin-bottom:24px">En nettbutikk og bedriftsside jeg har laget og driver selv.</p>
+        <ul class="rise">
+          <li>Tre språk: norsk, engelsk og svensk</li>
+          <li>Betaling med kort via Stripe</li>
+          <li>Egen side per kundegruppe</li>
+          <li>Hastighetsscore på 92 i Google Lighthouse</li>
+        </ul>
+        <a class="textlink rise" href="https://fjordandcrayon.com" target="_blank" rel="noopener">Besøk fjordandcrayon.com ↗</a>
+      </div>
+      <a class="fc rise" href="https://fjordandcrayon.com" target="_blank" rel="noopener" aria-label="Åpne fjordandcrayon.com">
+        <div class="sun"></div><div class="mtn"></div><div class="wave"></div>
+        <div class="name">FJORD &amp; CRAYON<small>fjordandcrayon.com</small></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="eyebrow rise">Priser</div>
+    <h2 class="rise">Fast pris. Avtalt før start.</h2>
+    <p class="sub rise">Ingen bindingstid, og dere eier siden når den er betalt.</p>
+    <div class="prices">
+      <div class="price rise"><h3>Enkel side</h3><div class="amt">4 900 kr</div><p>fra, engangsbeløp</p><ul><li>Én side med det viktigste</li><li>Kontaktknapper og kart</li><li>Oppsett av Google-bedriftsprofil</li></ul></div>
+      <div class="price feature rise"><h3>Standard</h3><div class="amt">9 900 kr</div><p>fra, engangsbeløp</p><ul><li>3–5 sider, for eksempel tjenester og prosjekter</li><li>Skjema for å be om tilbud</li><li>Tekster skrevet for lokale søk</li></ul></div>
+      <div class="price rise"><h3>Drift</h3><div class="amt">490 kr</div><p>per måned</p><ul><li>Hosting og domene</li><li>Små endringer når dere trenger det</li><li>Kan sies opp når som helst</li></ul></div>
+    </div>
+  </section>
+
+  <section class="block faq">
+    <div class="eyebrow rise">Spørsmål</div>
+    <h2 class="rise">Det folk lurer på.</h2>
+    <details><summary>Koster utkastet noe?</summary><p>Nei. Utkastet av forsiden er gratis og uforpliktende.</p></details>
+    <details><summary>Må vi bytte domene eller e-post?</summary><p>Nei. Dere beholder domenet og e-posten dere har i dag.</p></details>
+    <details><summary>Hvem eier siden?</summary><p>Dere. Etter betaling får dere alle filene og kan flytte siden når dere vil.</p></details>
+    <details><summary>Hva trenger du fra oss?</summary><p>Adressen til siden dere har i dag. Til den ferdige siden trenger jeg tekst om tjenestene deres og noen bilder av jobber dere har gjort.</p></details>
+  </section>
+
+  <section class="block" id="kontakt" style="border-top:0">
+    <div class="final rise">
+      <div class="stripe" aria-hidden="true"></div>
+      <h2>Se den nye siden deres før dere bestemmer dere.</h2>
+      <p>Send navnet på bedriften og adressen til nettsiden dere har i dag. Da får dere et gratis utkast i innboksen.</p>
+      <a class="cta" href="mailto:aksel@rivanstudio.com?subject=Gratis%20utkast%20til%20ny%20nettside">Send e-post til Aksel
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+
+</div>
+</main>
+<div class="wrap">
+  <footer><span>Rivan Studio · Aksel Jakobsen · Org.nr. 937 616 716</span><a href="mailto:aksel@rivanstudio.com">aksel@rivanstudio.com</a></footer>
+</div>
+
+<script>
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reno = document.getElementById('reno');
+  const screen = document.getElementById('screen');
+  const canvas = document.getElementById('canvas');
+  const newL = document.getElementById('new');
+  const oldL = document.getElementById('old');
+  const roller = document.getElementById('roller');
+  const tags = [...document.querySelectorAll('.tag')];
+  const phases = [...document.querySelectorAll('#phases li')];
+  const phaseText = document.getElementById('phase-text');
+  const texts = [
+    'Vi ser på siden dere har i dag og finner det som stopper kundene.',
+    'Det gamle ryddes bort: utdatert design, døde lenker og tung kode.',
+    'Ny side legges på: rask, tydelig og laget for mobil.',
+    'Ferdig. Kundene finner dere, forstår tilbudet og tar kontakt.'
+  ];
+
+  function fit(){
+    const w = screen.clientWidth, h = screen.clientHeight;
+    if (w < 600) { const s = h / 750; canvas.style.transform = `translateX(${-40 * s}px) scale(${s})`; }
+    else canvas.style.transform = `scale(${w / 1200})`;
+  }
+  addEventListener('resize', fit); fit();
+
+  const clamp = (v,a=0,b=1) => Math.min(b, Math.max(a, v));
+  const ease = t => 1 - Math.pow(1 - t, 3);
+  let last = -1;
+
+  function render(){
+    const r = reno.getBoundingClientRect();
+    const total = r.height - innerHeight;
+    const p = reduce ? 1 : clamp(-r.top / total);
+    if (Math.abs(p - last) < 0.0005) return; last = p;
+
+    // 1 Befaring: merkelapper dukker opp
+    tags.forEach(t => t.classList.toggle('show', p >= +t.dataset.at));
+    // 2-3 Riving og maling: rullen drar ny side ned over den gamle
+    const w = ease(clamp((p - 0.30) / 0.42));
+    newL.style.clipPath = `inset(0 0 ${(1 - w) * 100}% 0)`;
+    roller.style.top = `${w * 750 - 2}px`;
+    roller.style.opacity = (w > 0.001 && w < 0.999) ? 1 : 0;
+    oldL.style.filter = `grayscale(${clamp((p - 0.24) / 0.1)})`;
+    // 4 Ferdig: merkelappene blir grønne
+    tags.forEach((t, i) => t.classList.toggle('fixed', p >= 0.76 + i * 0.03));
+
+    const ph = p < 0.26 ? 0 : p < 0.48 ? 1 : p < 0.76 ? 2 : 3;
+    phases.forEach((li, i) => { li.classList.toggle('on', i === ph); li.classList.toggle('done', i < ph || (ph === 3 && i === 3)); });
+    phaseText.textContent = texts[ph];
+  }
+  let ticking = false;
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(() => { render(); ticking = false; }); } }, { passive:true });
+  render();
+
+  // Seksjoner glir inn
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin:'0px 0px -10% 0px' });
+  document.querySelectorAll('.rise').forEach(el => reduce ? el.classList.add('in') : io.observe(el));
+})();
+</script>
+</body>
+</html>
