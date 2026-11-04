@@ -15,7 +15,7 @@
 <meta property="og:image" content="https://rivanstudio.com/nettsider/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231F6B4F'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='17' fill='%23fff' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Rivan Studio","description":"Nettsider for små bedrifter","url":"https://rivanstudio.com/nettsider/","email":"aksel@rivanstudio.com","telephone":"+47 403 28 990","founder":{"@type":"Person","name":"Aksel Jakobsen"},"areaServed":"NO","priceRange":"4900–9900 NOK"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Rivan Studio","description":"Nettsider for små bedrifter","url":"https://rivanstudio.com/nettsider/","email":"aksel@rivanstudio.com","telephone":"+47 403 28 990","founder":{"@type":"Person","name":"Aksel Jakobsen"},"areaServed":"NO","priceRange":"4900–14900 NOK"}</script>
 <link rel="preload" href="fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -51,6 +51,17 @@ a{color:inherit}
 .tel:hover{color:var(--new)}
 .pill{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;text-decoration:none;padding:10px 18px;border-radius:999px;border:1.5px solid var(--ink);transition:background .2s,color .2s}
 .pill:hover{background:var(--ink);color:var(--paper)}
+
+/* ---------- flytende meny etter at man har scrollet ---------- */
+.fbar{position:fixed;left:0;right:0;top:0;z-index:20;background:rgba(243,239,230,.88);-webkit-backdrop-filter:saturate(1.4) blur(12px);backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line);transform:translateY(-102%);transition:transform .35s var(--ease)}
+.fbar.on{transform:none}
+.fbar .in{max-width:1240px;margin:0 auto;padding:10px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.fbar .logo,.fbar .go{white-space:nowrap}
+.fbar .go{display:inline-flex;align-items:center;gap:8px;background:var(--new);color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:10px 18px;border-radius:999px}
+.fbar .go:hover{background:#185a42}
+@media (max-width:520px){.fbar .in{padding:8px 16px}.fbar .tel span{display:none}.fbar .tel{width:40px;height:40px;justify-content:center;border:1.5px solid var(--line);border-radius:50%}.fbar .go{font-size:14px;padding:9px 14px}}
+.fbar .s{display:none}
+@media (max-width:370px){.fbar .l{display:none}.fbar .s{display:inline}}
 
 /* ---------- hero ---------- */
 .hero{padding:clamp(28px,6vw,72px) 0 clamp(24px,4vw,40px)}
@@ -169,9 +180,9 @@ a{color:inherit}
 .fict{position:absolute;right:12px;bottom:10px;font-size:11px;color:#6B7570;background:rgba(255,255,255,.85);padding:3px 8px;border-radius:6px;z-index:2}
 
 /* ---------- vanlige seksjoner ---------- */
-section.block{padding:clamp(64px,9vw,120px) 0;border-top:1px solid var(--line)}
+section.block{padding:clamp(56px,7vw,96px) 0;border-top:1px solid var(--line)}
 h2{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height:1;font-size:clamp(36px,5.6vw,72px);margin:12px 0 18px}
-.sub{color:var(--muted);max-width:52ch;margin:0 0 44px;font-size:18px}
+.sub{color:var(--muted);max-width:52ch;margin:0 0 36px;font-size:18px}
 .grid4{display:grid;gap:16px;grid-template-columns:repeat(4,1fr)}
 .card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .25s var(--ease),border-color .25s}
 .card:hover{transform:translateY(-3px);border-color:#C9C1B1}
@@ -214,7 +225,17 @@ h2{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height
 .price h3{font-family:var(--display);font-size:22px;margin:0}
 .price .amt{font-family:var(--display);font-weight:800;font-size:46px;letter-spacing:-.04em;margin:14px 0 4px;line-height:1}
 .price p{margin:0 0 18px;color:var(--muted);font-size:15px}
-.price ul{margin:0;padding-left:18px;color:var(--muted);font-size:16px;display:grid;gap:6px}
+.price ul{margin:0 0 26px;padding-left:18px;color:var(--muted);font-size:16px;display:grid;gap:6px}
+.price .was{display:block;margin-top:2px;font-size:14px;color:var(--muted)}
+.price .was s{text-decoration-thickness:1.5px}
+.price.feature .was{color:#9EA3AD}
+.price .go{margin-top:auto;display:flex;justify-content:center;align-items:center;gap:8px;padding:13px 18px;border-radius:999px;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid var(--ink);transition:background .2s,color .2s}
+.price .go:hover{background:var(--ink);color:var(--paper)}
+.price.feature .go{background:var(--new);border-color:var(--new);color:#fff}
+.price.feature .go:hover{background:#185a42;border-color:#185a42}
+.price .note{margin-top:auto;font-size:14px;color:var(--muted)}
+.intro{display:inline-flex;align-items:flex-start;gap:10px;margin:0 0 30px;padding:9px 16px 9px 14px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink);font-weight:600;font-size:15px;line-height:1.4}
+.intro::before{content:"";flex:none;width:8px;height:8px;margin-top:.45em;border-radius:50%;background:var(--new);box-shadow:0 0 0 4px rgba(31,107,79,.15)}
 
 .faq details{border-bottom:1px solid var(--line);padding:22px 0}
 .faq details:first-of-type{border-top:1.5px solid var(--ink)}
@@ -248,8 +269,8 @@ h2{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height
 .lf.done label,.lf.done button,.lf.done small{display:none}
 .lf.done .msg{font-size:18px;color:var(--paper)}
 @media (max-width:900px){.final-grid{grid-template-columns:1fr}}
-.final .stripe{position:absolute;right:-60px;top:-60px;width:320px;height:320px;border-radius:50%;border:40px solid var(--new);opacity:.9}
-@media (max-width:640px){.final .stripe{width:180px;height:180px;border-width:24px;right:-70px;top:-70px;opacity:.55}}
+.final .stripe{position:absolute;left:-90px;bottom:-110px;width:300px;height:300px;border-radius:50%;border:38px solid var(--new);opacity:.9}
+@media (max-width:900px){.final .stripe{display:none}}
 
 footer{padding:40px 0 56px;color:var(--muted);font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 footer nav{display:flex;gap:18px;flex-wrap:wrap}
@@ -286,10 +307,19 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
 }
 @media (max-width:520px){
   .wrap{padding:0 16px}
-  .grid4{grid-template-columns:1fr}
+  .grid4{grid-template-columns:1fr;gap:10px}
+  .card{display:grid;grid-template-columns:40px 1fr;gap:4px 16px;padding:18px}
+  .card .ic{grid-row:span 2;margin:0}
+  .card h3{font-size:19px;margin:0}
+  .card p{font-size:15px}
   .pill{display:none}
+  .intro{border-radius:16px;font-size:14px}
+  .stage>*{min-width:0}
   .hero h1{font-size:10.6vw}
   .frame .bar .url{display:none}
+}
+@media (max-width:380px){
+  .phases{grid-auto-flow:row;grid-template-columns:1fr 1fr;justify-content:stretch;gap:8px 12px}
 }
 
 /* ---------- redusert bevegelse ---------- */
@@ -304,6 +334,7 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
 </head>
 <body>
 <a class="skip" href="#innhold">Hopp til innhold</a>
+<div class="fbar" id="fbar" aria-hidden="true"><div class="in"><a class="logo" href="#" tabindex="-1">Rivan <i>Studio</i></a><div class="topr"><a class="tel" href="tel:+4740328990" tabindex="-1" aria-label="Ring 403 28 990"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span>403 28 990</span></a><a class="go" href="#kontakt" tabindex="-1"><span class="l">Få gratis utkast</span><span class="s">Gratis utkast</span></a></div></div></div>
 
 <div class="wrap">
   <header class="top">
@@ -467,10 +498,11 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
     <div class="eyebrow rise">Priser</div>
     <h2 class="rise">Fast pris. Avtalt før start.</h2>
     <p class="sub rise">Ingen bindingstid, og dere eier siden når den er betalt.</p>
+    <p class="intro rise">Introduksjonspris for de tre første kundene. Deretter gjelder ordinær pris.</p>
     <div class="prices">
-      <div class="price rise"><h3>Enkel side</h3><div class="amt">4 900 kr</div><p>fra, engangsbeløp</p><ul><li>Én side med det viktigste</li><li>Kontaktknapper og kart</li><li>Oppsett av Google-bedriftsprofil</li></ul></div>
-      <div class="price feature rise"><span class="pop">Anbefalt</span><h3>Standard</h3><div class="amt">9 900 kr</div><p>fra, engangsbeløp</p><ul><li>3–5 sider, for eksempel tjenester og prosjekter</li><li>Skjema for å be om tilbud</li><li>Tekster skrevet for lokale søk</li></ul></div>
-      <div class="price rise"><h3>Drift</h3><div class="amt">490 kr</div><p>per måned, valgfritt</p><ul><li>Hosting og domene</li><li>Små endringer når dere trenger det</li><li>Kan sies opp når som helst</li></ul></div>
+      <div class="price rise"><h3>Enkel side</h3><div class="amt">4 900 kr</div><p>fra, engangsbeløp<span class="was">Ordinær pris <s>7 900 kr</s></span></p><ul><li>Én side med det viktigste</li><li>Kontaktknapper og kart</li><li>Oppsett av Google-bedriftsprofil</li></ul><a class="go" href="#kontakt">Få gratis utkast <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="price feature rise"><span class="pop">Anbefalt</span><h3>Standard</h3><div class="amt">9 900 kr</div><p>fra, engangsbeløp<span class="was">Ordinær pris <s>14 900 kr</s></span></p><ul><li>3–5 sider, for eksempel tjenester og prosjekter</li><li>Skjema for å be om tilbud</li><li>Tekster skrevet for lokale søk</li></ul><a class="go" href="#kontakt">Få gratis utkast <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div class="price rise"><h3>Drift</h3><div class="amt">249 kr</div><p>per måned, valgfritt</p><ul><li>Hosting og domene</li><li>Små endringer når dere trenger det</li><li>Kan sies opp når som helst</li></ul><p class="note">Kan legges til begge pakkene.</p></div>
     </div>
     <div class="guarantee rise"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><b>Fornøyd-garanti</b><p>Dere betaler først når siden er ferdig og dere er fornøyde med den. Ingen forskudd og ingen bindingstid.</p></div></div>
   </section>
@@ -485,7 +517,7 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
     <details><summary>Hva trenger du fra oss?</summary><p>Adressen til siden dere har i dag. Til den ferdige siden trenger jeg tekst om tjenestene deres og noen bilder av jobber dere har gjort.</p></details>
   </section>
 
-  <section class="block" id="kontakt" style="border-top:0">
+  <section class="block" id="kontakt" style="border-top:0;padding-top:clamp(24px,4vw,48px)">
     <div class="final rise">
       <div class="stripe" aria-hidden="true"></div>
       <div class="final-grid">
@@ -502,7 +534,7 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
           <label><b>Bedrift</b><input name="Bedrift" id="f-firma" required maxlength="80" autocomplete="organization" placeholder="For eksempel Hansen Rør AS"></label>
           <label><b>Nettsiden dere har i dag <span>(valgfritt)</span></b><input name="Nettside" maxlength="200" inputmode="url" placeholder="hansen-ror.no"></label>
           <label><b>E-post</b><input name="email" type="email" required maxlength="120" autocomplete="email" placeholder="post@firma.no"></label>
-          <label><b>Telefon <span>(valgfritt)</span></b><input name="Telefon" type="tel" maxlength="20" autocomplete="tel"></label>
+          <label><b>Telefon <span>(valgfritt)</span></b><input name="Telefon" type="tel" maxlength="20" autocomplete="tel" placeholder="8 siffer"></label>
           <button class="cta" type="submit">Få gratis utkast
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           <small>Uforpliktende. Opplysningene brukes bare til å svare deg. <a href="personvern/">Personvern</a></small>
@@ -519,6 +551,22 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
 </div>
 
 <script>
+/* Flytende meny: vises etter toppen, skjules ved kontaktskjemaet */
+(() => {
+  const bar = document.getElementById('fbar'), kontakt = document.getElementById('kontakt');
+  if (!bar || !kontakt) return;
+  let atForm = false, was = null;
+  new IntersectionObserver(([e]) => { atForm = e.isIntersecting; tick(); }, { rootMargin: '0px 0px -30% 0px' }).observe(kontakt);
+  function tick() {
+    const on = scrollY > 640 && !atForm;
+    if (on === was) return; was = on;
+    bar.classList.toggle('on', on);
+    bar.setAttribute('aria-hidden', on ? 'false' : 'true');
+    bar.querySelectorAll('a').forEach(a => on ? a.removeAttribute('tabindex') : a.setAttribute('tabindex', '-1'));
+  }
+  addEventListener('scroll', tick, { passive: true });
+  tick();
+})();
 /* Personlig hilsen: rivanstudio.com/nettsider/?firma=Eker%20Bygg */
 (() => {
   const raw = new URLSearchParams(location.search).get('firma');
