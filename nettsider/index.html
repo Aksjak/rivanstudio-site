@@ -234,6 +234,8 @@ h2{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height
 .price.feature .go{background:var(--new);border-color:var(--new);color:#fff}
 .price.feature .go:hover{background:#185a42;border-color:#185a42}
 .price .note{margin-top:auto;font-size:14px;color:var(--muted)}
+.price .bf{margin:12px 0 0;padding:12px 14px;border-radius:12px;background:var(--new-soft);color:#173F30;font-size:14px;line-height:1.45}
+.price .bf b{color:var(--new)}
 .intro{display:inline-flex;align-items:flex-start;gap:10px;margin:0 0 30px;padding:9px 16px 9px 14px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink);font-weight:600;font-size:15px;line-height:1.4}
 .intro::before{content:"";flex:none;width:8px;height:8px;margin-top:.45em;border-radius:50%;background:var(--new);box-shadow:0 0 0 4px rgba(31,107,79,.15)}
 
@@ -502,7 +504,7 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
     <div class="prices">
       <div class="price rise"><h3>Enkel side</h3><div class="amt">4 900 kr</div><p>fra, engangsbeløp<span class="was">Ordinær pris <s>7 900 kr</s></span></p><ul><li>Én side med det viktigste</li><li>Kontaktknapper og kart</li><li>Oppsett av Google-bedriftsprofil</li></ul><a class="go" href="#kontakt">Få gratis utkast <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       <div class="price feature rise"><span class="pop">Anbefalt</span><h3>Standard</h3><div class="amt">9 900 kr</div><p>fra, engangsbeløp<span class="was">Ordinær pris <s>14 900 kr</s></span></p><ul><li>3–5 sider, for eksempel tjenester og prosjekter</li><li>Skjema for å be om tilbud</li><li>Tekster skrevet for lokale søk</li></ul><a class="go" href="#kontakt">Få gratis utkast <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-      <div class="price rise"><h3>Drift</h3><div class="amt">249 kr</div><p>per måned, valgfritt</p><ul><li>Hosting og domene</li><li>Små endringer når dere trenger det</li><li>Kan sies opp når som helst</li></ul><p class="note">Kan legges til begge pakkene.</p></div>
+      <div class="price rise"><h3>Drift</h3><div class="amt">249 kr</div><p>per måned, valgfritt</p><ul><li>Hosting og domene</li><li>Små endringer når dere trenger det</li><li>Kan sies opp når som helst</li></ul><p class="note">Kan legges til begge pakkene.</p><p class="bf" data-until="2026-12-01"><b>Black Friday:</b> Bestiller dere innen 30. november, får dere de 3 første månedene med drift gratis.</p></div>
     </div>
     <div class="guarantee rise"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><b>Fornøyd-garanti</b><p>Dere betaler først når siden er ferdig og dere er fornøyde med den. Ingen forskudd og ingen bindingstid.</p></div></div>
   </section>
@@ -551,6 +553,8 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
 </div>
 
 <script>
+/* Tidsbegrensede tilbud forsvinner av seg selv etter datoen */
+document.querySelectorAll('[data-until]').forEach(el => { if (new Date() >= new Date(el.dataset.until + 'T00:00:00+01:00')) el.remove(); });
 /* Flytende meny: vises etter toppen, skjules ved kontaktskjemaet */
 (() => {
   const bar = document.getElementById('fbar'), kontakt = document.getElementById('kontakt');
