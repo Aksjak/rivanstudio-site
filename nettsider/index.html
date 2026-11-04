@@ -15,7 +15,7 @@
 <meta property="og:image" content="https://rivanstudio.com/nettsider/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231F6B4F'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='17' fill='%23fff' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Rivan Studio","description":"Nettsider for små bedrifter","url":"https://rivanstudio.com/nettsider/","email":"aksel@rivanstudio.com","founder":{"@type":"Person","name":"Aksel Jakobsen"},"areaServed":"NO","priceRange":"4900–9900 NOK"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Rivan Studio","description":"Nettsider for små bedrifter","url":"https://rivanstudio.com/nettsider/","email":"aksel@rivanstudio.com","telephone":"+47 403 28 990","founder":{"@type":"Person","name":"Aksel Jakobsen"},"areaServed":"NO","priceRange":"4900–9900 NOK"}</script>
 <link rel="preload" href="fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
@@ -46,6 +46,9 @@ a{color:inherit}
 .top{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
 .logo{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.02em;text-decoration:none}
 .logo i{font-style:normal;color:var(--new)}
+.topr{display:flex;align-items:center;gap:18px}
+.tel{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;text-decoration:none}
+.tel:hover{color:var(--new)}
 .pill{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;text-decoration:none;padding:10px 18px;border-radius:999px;border:1.5px solid var(--ink);transition:background .2s,color .2s}
 .pill:hover{background:var(--ink);color:var(--paper)}
 
@@ -67,6 +70,13 @@ a{color:inherit}
 .cta:hover svg{transform:translateX(3px)}
 .hero .actions{display:flex;flex-direction:column;align-items:flex-start;gap:10px;justify-self:end}
 .hero .actions small{color:var(--muted);font-size:14px}
+.who{display:flex;align-items:center;gap:12px;margin-top:18px;font-size:14px;font-weight:600}
+.who .face{width:40px;height:40px;border-radius:50%;background:var(--new);color:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:15px;flex:none;overflow:hidden}
+.who .face img{width:100%;height:100%;object-fit:cover}
+.who small{display:block;font-weight:400;color:var(--muted);font-size:13px}
+.proof{list-style:none;padding:22px 0 0;margin:clamp(28px,4vw,44px) 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:12px 32px;font-size:15px;font-weight:600}
+.proof li{display:flex;align-items:center;gap:8px}
+.proof svg{color:var(--new);flex:none}
 .scrollhint{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:14px;margin-top:28px}
 .scrollhint span{display:block;width:1.5px;height:34px;background:linear-gradient(var(--ink),transparent);animation:hint 1.8s ease-in-out infinite}
 @keyframes hint{0%,100%{transform:translateY(-4px);opacity:.4}50%{transform:translateY(4px);opacity:1}}
@@ -115,7 +125,7 @@ a{color:inherit}
 .old .o-body{display:grid;grid-template-columns:200px 1fr;gap:18px;padding:18px}
 .old .o-side{font:11px Verdana,sans-serif;background:#F4F4F4;border:1px solid #BBB;padding:10px;line-height:1.7}
 .old .o-side b{color:#1E4580}
-.old .o-main h2{font-size:30px;color:#C00000;margin:0 0 6px;font-style:italic}
+.old .o-main h2{font-family:"Times New Roman",Times,serif;font-weight:bold;letter-spacing:0;line-height:1.2;font-size:30px;color:#C00000;margin:0 0 6px;font-style:italic}
 .old .o-main p{font:12px Verdana,sans-serif;margin:0 0 10px;line-height:1.5}
 .old .o-img{display:block;width:253px;height:190px;border:3px ridge #999;margin:10px 0;image-rendering:auto}
 .old .o-marq{font:bold 12px Verdana,sans-serif;color:#fff;background:#C00000;padding:4px 8px;white-space:nowrap;overflow:hidden}
@@ -193,6 +203,12 @@ h2{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height
 
 .prices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .price{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:30px;display:flex;flex-direction:column}
+.price{position:relative}
+.price .pop{position:absolute;top:-13px;left:30px;background:var(--new);color:#fff;font-size:12px;font-weight:600;letter-spacing:.04em;padding:5px 12px;border-radius:999px}
+.guarantee{display:flex;gap:18px;align-items:flex-start;margin-top:22px;padding:22px 26px;border-radius:20px;background:var(--new-soft);color:#173F30}
+.guarantee svg{flex:none;color:var(--new);margin-top:2px}
+.guarantee b{display:block;font-family:var(--display);font-size:20px;letter-spacing:-.01em;color:var(--ink);margin-bottom:2px}
+.guarantee p{margin:0;font-size:16px}
 .price.feature{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 .price.feature p,.price.feature li{color:#C9CCD3}
 .price h3{font-family:var(--display);font-size:22px;margin:0}
@@ -215,22 +231,22 @@ h2{font-family:var(--display);font-weight:800;letter-spacing:-.035em;line-height
 .final-grid{position:relative;display:grid;grid-template-columns:1fr minmax(300px,420px);gap:clamp(28px,5vw,64px);align-items:start}
 .final .alt{font-size:15px;margin:0}
 .final .alt a{color:var(--paper)}
-.lead{display:grid;gap:14px;background:#252A32;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:24px}
-.lead label{display:grid;gap:6px;font-size:14px;font-weight:600;color:var(--paper)}
-.lead label b{font-weight:600}
-.lead label span{font-weight:400;color:#9EA3AD}
-.lead input{font:inherit;font-size:16px;font-weight:400;color:var(--ink);background:var(--paper);border:2px solid transparent;border-radius:12px;padding:12px 14px;width:100%}
-.lead input:focus{outline:none;border-color:#7FD1A9}
-.lead input[aria-invalid="true"]{border-color:var(--old)}
-.lead .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-.lead button{border:0;cursor:pointer;justify-content:center;font:inherit;font-weight:600;margin-top:4px}
-.lead button[disabled]{opacity:.6;cursor:wait}
-.lead small{color:#9EA3AD;font-size:13px}
-.lead small a{color:#C9CCD3}
-.lead .msg{margin:0;font-size:15px;color:#7FD1A9;min-height:0}
-.lead .msg.err{color:#F2B766}
-.lead.done label,.lead.done button,.lead.done small{display:none}
-.lead.done .msg{font-size:18px;color:var(--paper)}
+.lf{display:grid;gap:14px;background:#252A32;border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:24px}
+.lf label{display:grid;gap:6px;font-size:14px;font-weight:600;color:var(--paper)}
+.lf label b{font-weight:600}
+.lf label span{font-weight:400;color:#9EA3AD}
+.lf input{font:inherit;font-size:16px;font-weight:400;color:var(--ink);background:var(--paper);border:2px solid transparent;border-radius:12px;padding:12px 14px;width:100%}
+.lf input:focus{outline:none;border-color:#7FD1A9}
+.lf input[aria-invalid="true"]{border-color:var(--old)}
+.lf .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.lf button{border:0;cursor:pointer;justify-content:center;font:inherit;font-weight:600;margin-top:4px}
+.lf button[disabled]{opacity:.6;cursor:wait}
+.lf small{color:#9EA3AD;font-size:13px}
+.lf small a{color:#C9CCD3}
+.lf .msg{margin:0;font-size:15px;color:#7FD1A9;min-height:0}
+.lf .msg.err{color:#F2B766}
+.lf.done label,.lf.done button,.lf.done small{display:none}
+.lf.done .msg{font-size:18px;color:var(--paper)}
 @media (max-width:900px){.final-grid{grid-template-columns:1fr}}
 .final .stripe{position:absolute;right:-60px;top:-60px;width:320px;height:320px;border-radius:50%;border:40px solid var(--new);opacity:.9}
 @media (max-width:640px){.final .stripe{width:180px;height:180px;border-width:24px;right:-70px;top:-70px;opacity:.55}}
@@ -292,7 +308,7 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
 <div class="wrap">
   <header class="top">
     <a class="logo" href="#">Rivan <i>Studio</i></a>
-    <a class="pill" href="#kontakt">Få gratis utkast</a>
+    <div class="topr"><a class="tel" href="tel:+4740328990"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>403 28 990</a><a class="pill" href="#kontakt">Få gratis utkast</a></div>
   </header>
 
   <div class="hero">
@@ -303,9 +319,15 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
       <div class="actions">
         <a class="cta" href="#kontakt">Be om gratis utkast
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <small>Uforpliktende. Ferdig side på under en uke.</small>
+        <div class="who"><span class="face" aria-hidden="true">AJ</span><span>Du snakker direkte med Aksel<small>Ingen kundesenter, ingen mellomledd</small></span></div>
       </div>
     </div>
+    <ul class="proof">
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Gratis utkast først</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Fast pris, avtalt før start</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Ferdig på under en uke</li>
+      <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Dere betaler når dere er fornøyde</li>
+    </ul>
     <div class="scrollhint"><span></span>Scroll og se oppussingen</div>
   </div>
 </div>
@@ -447,9 +469,10 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
     <p class="sub rise">Ingen bindingstid, og dere eier siden når den er betalt.</p>
     <div class="prices">
       <div class="price rise"><h3>Enkel side</h3><div class="amt">4 900 kr</div><p>fra, engangsbeløp</p><ul><li>Én side med det viktigste</li><li>Kontaktknapper og kart</li><li>Oppsett av Google-bedriftsprofil</li></ul></div>
-      <div class="price feature rise"><h3>Standard</h3><div class="amt">9 900 kr</div><p>fra, engangsbeløp</p><ul><li>3–5 sider, for eksempel tjenester og prosjekter</li><li>Skjema for å be om tilbud</li><li>Tekster skrevet for lokale søk</li></ul></div>
-      <div class="price rise"><h3>Drift</h3><div class="amt">490 kr</div><p>per måned</p><ul><li>Hosting og domene</li><li>Små endringer når dere trenger det</li><li>Kan sies opp når som helst</li></ul></div>
+      <div class="price feature rise"><span class="pop">Anbefalt</span><h3>Standard</h3><div class="amt">9 900 kr</div><p>fra, engangsbeløp</p><ul><li>3–5 sider, for eksempel tjenester og prosjekter</li><li>Skjema for å be om tilbud</li><li>Tekster skrevet for lokale søk</li></ul></div>
+      <div class="price rise"><h3>Drift</h3><div class="amt">490 kr</div><p>per måned, valgfritt</p><ul><li>Hosting og domene</li><li>Små endringer når dere trenger det</li><li>Kan sies opp når som helst</li></ul></div>
     </div>
+    <div class="guarantee rise"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6l7-3z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><div><b>Fornøyd-garanti</b><p>Dere betaler først når siden er ferdig og dere er fornøyde med den. Ingen forskudd og ingen bindingstid.</p></div></div>
   </section>
 
   <section class="block faq">
@@ -457,6 +480,7 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
     <h2 class="rise">Det folk lurer på.</h2>
     <details><summary>Koster utkastet noe?</summary><p>Nei. Utkastet av forsiden er gratis og uforpliktende.</p></details>
     <details><summary>Må vi bytte domene eller e-post?</summary><p>Nei. Dere beholder domenet og e-posten dere har i dag.</p></details>
+    <details><summary>Hva om vi ikke blir fornøyde?</summary><p>Da betaler dere ingenting. Dere betaler først når siden er ferdig og dere er fornøyde med den.</p></details>
     <details><summary>Hvem eier siden?</summary><p>Dere. Etter betaling får dere alle filene og kan flytte siden når dere vil.</p></details>
     <details><summary>Hva trenger du fra oss?</summary><p>Adressen til siden dere har i dag. Til den ferdige siden trenger jeg tekst om tjenestene deres og noen bilder av jobber dere har gjort.</p></details>
   </section>
@@ -468,9 +492,9 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
         <div>
           <h2>Se den nye siden deres før dere bestemmer dere.</h2>
           <p>Fyll inn navnet på bedriften og nettsiden dere har i dag. Da får dere et gratis utkast i innboksen, vanligvis innen to virkedager.</p>
-          <p class="alt">Liker du e-post bedre? <a href="mailto:aksel@rivanstudio.com?subject=Gratis%20utkast%20til%20ny%20nettside">aksel@rivanstudio.com</a></p>
+          <p class="alt">Liker du å ringe eller sende e-post? <a href="tel:+4740328990">403 28 990</a> · <a href="mailto:aksel@rivanstudio.com?subject=Gratis%20utkast%20til%20ny%20nettside">aksel@rivanstudio.com</a></p>
         </div>
-        <form class="lead" id="lead" action="https://api.web3forms.com/submit" method="POST" novalidate>
+        <form class="lf" id="lead" action="https://api.web3forms.com/submit" method="POST" novalidate>
           <input type="hidden" name="access_key" value="72e392ea-956c-43bd-8b5b-543458014338">
           <input type="hidden" name="subject" value="Ny forespørsel: gratis utkast (rivanstudio.com/nettsider)">
           <input type="hidden" name="from_name" value="Rivan Studio nettsider">
@@ -491,7 +515,7 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
 </div>
 </main>
 <div class="wrap">
-  <footer><span>Rivan Studio · Aksel Jakobsen · Leitevegen 16A, 5357 Fjell · Org.nr. 937 616 716</span><nav><a href="personvern/">Personvern</a><a href="mailto:aksel@rivanstudio.com">aksel@rivanstudio.com</a></nav></footer>
+  <footer><span>Rivan Studio · Aksel Jakobsen · Leitevegen 16A, 5357 Fjell · Org.nr. 937 616 716</span><nav><a href="personvern/">Personvern</a><a href="tel:+4740328990">403 28 990</a><a href="mailto:aksel@rivanstudio.com">aksel@rivanstudio.com</a></nav></footer>
 </div>
 
 <script>
